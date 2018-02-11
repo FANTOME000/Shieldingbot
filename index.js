@@ -1,12 +1,13 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var port = process.env.PORT || 3000;
-app.listen(port, "0.0.0.0", function () {
-console.log("Listening on Port 3000");
-});
 
 client.on('ready', () => {
     console.log(`Se connecter comme ${client.user.tag}!`);
+    client.listen(port, "0.0.0.0", function () {
+        console.log("Listening on Port 3000");
+    });
+
 });
 
 client.on('message', msg => {
