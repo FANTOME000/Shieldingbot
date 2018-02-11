@@ -1,39 +1,14 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const settings = require('./settings.json');
-app.get("/", function(req, res) {
-  res.send("Shielding lancer");
+
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
 });
 
-app.listen(port);
-
-const request = require("request");
-client.on("ready", () => {
-  console.log(`Connecter a ${client.user.tag}!`);
+client.on('message', msg => {
+  if (msg.content === 'ping') {
+    msg.reply('Pong!');
+  }
 });
 
-client.on("message", msg => {
-    if (msg.content === ";pp") {
-        msg.channel.send({
-            embed: {
-                color: 2550255,
-                author: {
-                    name: client.user.username,
-                    icon_url: client.user.avatarURL
-                },
-                title: "**Votre Photo de profil**",
-                url: msg.author.avatarURL,
-                image: {
-                    url: username.tag.avatarURL
-                },
-
-                timestamp: new Date(),
-                footer: {
-                    icon_url: client.user.avatarURL,
-                    text: "Client"
-                }
-            }
-        });
-    }
-  });
-client.login("musictestsdsfsfNDAxMzc1MTI0MDkzMTQxMDEz.DWI5rw.q_r8vYTwhKy0tY_cr6SVwv5pbTQ");
+client.login('Mzk4Mjc5MDE1Nzc5MTM5NTg3.DTkPJA.1PNb5ohT3T8bF0R9MAYZRXcarz8');
