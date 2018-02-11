@@ -11,8 +11,8 @@
     "url": "git+https://github.com/FANTOME000/-ShieldingBot.git"
   },
   "engines": {
-    "node": "5.0.0",
-    "npm": "4.6.1"
+    "node": "9.5.0",
+    "npm": "5.6.0"
   },
   "author": "FANTOME000",
   "license": "ISC",
