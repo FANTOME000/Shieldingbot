@@ -2,12 +2,12 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+    console.log(`Se connecter comme ${client.user.tag}!`);
 });
 
 client.on('message', msg => {
   if (msg.content === 'ping') {
-    msg.reply('Im here !');
+    msg.reply('I am here !');
   }
 });
 
