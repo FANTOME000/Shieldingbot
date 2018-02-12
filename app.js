@@ -35,7 +35,7 @@ client.on('message', msg => {
       });
   }
 
-  if (msg.content === ";help") {
+  if (msg.content === "*help") {
       msg.channel.send({
           embed: {
               color: 2550255,
@@ -55,7 +55,7 @@ client.on('message', msg => {
                   },
                   {
                       name: "PS",
-                      value: "Rejoignez le serveur Officiel du BOT pour plus d'aide (cliquer sur le message)",
+                      title: "Rejoignez le serveur Officiel du BOT pour plus d'aide (cliquer sur le message)",
                       url:"https://discord.gg/nyfpCuA"
                   },
                   {
