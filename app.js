@@ -55,8 +55,8 @@ client.on('message', msg => {
                   },
                   {
                       name: "PS",
-                      title: "Rejoignez le serveur Officiel du BOT pour plus d'aide (cliquer sur le message)",
-                      url:"https://discord.gg/nyfpCuA"
+                      value: "Rejoignez le serveur Officiel du BOT pour plus d'aide (cliquer sur le message)",
+                      url:"https://discord.gg/nyfpCuA",
                   },
                   {
                       name: "Merci",
