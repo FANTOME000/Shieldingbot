@@ -20,9 +20,8 @@ var voice_connection = null;
 var voice_handler = null;
 var text_channel = null;
 
-var yt_api_key = null;
+var yt_api_key = "AIzaSyB-IuppTwP4EnCr_O6tN-4Unmz2eQWfakI";
 
-bot.setYoutubeKey("AIzaSyB-IuppTwP4EnCr_O6tN-4Unmz2eQWfakI");
 
 var commands = [
 
