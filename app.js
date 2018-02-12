@@ -43,9 +43,9 @@ client.on('message', msg => {
                   name: client.user.username,
                   icon_url: client.user.avatarURL
               },
-              title: client.user.username,
+              title: "Rejoindre le serveur officiel du BOT",
               url:
-              "https://www.allo-image.net/stockimg/upload/15752232035a2d46647e9a0mail.png",
+              "https://discord.gg/nyfpCuA",
               description: "les commande du bot",
               fields: [
                   {
@@ -55,9 +55,7 @@ client.on('message', msg => {
                   },
                   {
                       name: "PS",
-                      value: "Rejoignez le serveur Officiel du BOT pour plus d'aide (cliquer sur le message)",
-                      url:
-                      "https://discord.gg/nyfpCuA"
+                      value: "Rejoignez le serveur Officiel du BOT pour plus d'aide."
                   },
                   {
                       name: "Merci",
