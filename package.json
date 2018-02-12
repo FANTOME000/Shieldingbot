@@ -2,15 +2,20 @@
   "name": "-shieldingbot",
   "version": "1.0.0",
   "description": "Discord bot by FANTOME000",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-      "start": "node app.js",
-     "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FANTOME000/-ShieldingBot.git"
   },
+  "keywords": [
+    "discord",
+    "bot",
+    "music"
+  ],
   "engines": {
     "node": "9.5.0",
     "npm": "5.6.0"
@@ -22,9 +27,6 @@
   },
   "homepage": "https://github.com/FANTOME000/-ShieldingBot#readme",
   "dependencies": {
-    "discord.js": "^11.2.1",
-    "node-opus": "^0.2.4",
-    "request": "^2.79.0",
-    "ytdl-core": "^0.7.21"
+    "discord.js": "^11.2.1"
   }
 }

