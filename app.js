@@ -54,8 +54,10 @@ client.on('message', msg => {
                       ";blacklist, ;clean, ;clear, ;disconnect, ;id, ;joinserver, ;listids, ;np, ;pause, ;perms, ;play, ;pldump, ;queue, ;restart, ;resume, ;search, ;setavatar, ;setname, ;setnick, ;shuffle, ;shutdown, ;skip, ;stream, ;summon, ;volume."
                   },
                   {
-                      title: "PS",
-                      url:"https://discord.gg/nyfpCuA"
+                      name: "PS",
+                      value: "Rejoignez le serveur Officiel du BOT pour plus d'aide (cliquer sur le message)",
+                      url:
+                      "https://discord.gg/nyfpCuA"
                   },
                   {
                       name: "Merci",
