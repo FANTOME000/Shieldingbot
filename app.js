@@ -76,7 +76,7 @@ client.on('message', msg => {
 // fin du code message
 });
 
-var bot = require(" discord-music-bot ");
+var bot = require("discord-music-bot");
 
 var serverName = "DEV BOT NO NAME";
 var textChannelName = "chat";
