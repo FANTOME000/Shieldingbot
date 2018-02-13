@@ -70,9 +70,7 @@ client.on("message", msg => {
     }
 
     client.on("guildMemberAdd", member => {
-        client.channels
-            .get("412656091613102080")
-            .send("Nouveaux visiteurs son nom " + member.user.username);
+        client.channels.get("412656091613102080").send("Nouveaux visiteurs son nom " + member.user.username);
         var role = member.guild.roles.find("name", "Visiteurs");
         member.addRole(role);
     });
