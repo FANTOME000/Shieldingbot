@@ -7,7 +7,7 @@ client.on("ready", () => {
     client.channels.get("412656091613102080").sendMessage({
         embed: {
             title: "Bot ON,prêt a être utiliser !",
-            color: "2874A6"
+            color: 0x2874A6
         }
     });
 });
