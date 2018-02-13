@@ -6,7 +6,7 @@ client.on("ready", () => {
     client.user.setPresence({ game: { name: "*" + "help" + " pour afficher l'aide", type: 0 } });
     client.channels.get("412656091613102080").sendMessage({
         embed: {
-            color: 00FF00,
+            color: "00FF00",
             title: "Bot ON,prêt a être utiliser !"
         }
     });
