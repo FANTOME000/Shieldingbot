@@ -7,7 +7,7 @@ client.on("ready", () => {
     // activiter du bot
     client.user.setPresence({ game: { name: "*" + "help" + " pour afficher l'aide", type: 0 } });
     // message de mise en route du bot
-    client.channels.get("412656091613102080").sendMessage({
+    client.channels.get("413027512122081280").sendMessage({
         embed: {
             title: "Bot ON,prêt a être utiliser !",
             color: 0x58D68D
@@ -79,7 +79,7 @@ client.on("message", msg => {
 
     // Nouveaux membre
     client.on("guildMemberAdd", member => {
-        client.channels.get("412656091613102080").send({
+        client.channels.get("413027477598765056").send({
             embed: {
                 title: "Un nouveaux Visiteurs sont nom " + member.user.username,
                 color: 0xECF0F1
