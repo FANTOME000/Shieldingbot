@@ -8,7 +8,6 @@ client.on("ready", () => {
 });
 
 client.on("message", msg => {
-    client.channels.find("name", "chat").sendMessage("Bot ON prêt a être utilisier");
     if (msg.content === "ping") {
         msg.reply("I am here !");
     }
