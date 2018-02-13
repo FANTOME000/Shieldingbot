@@ -6,8 +6,8 @@ client.on("ready", () => {
     client.user.setPresence({ game: { name: "*" + "help" + " pour afficher l'aide", type: 0 } });
     client.channels.get("412656091613102080").sendMessage({
         embed: {
-            color:"2874A6",
-            title: "Bot ON,prêt a être utiliser !"
+            title: "Bot ON,prêt a être utiliser !",
+            color: "2874A6"
         }
     });
 });
