@@ -1,82 +1,83 @@
 ﻿const Discord = require("discord.js");
 const client = new Discord.Client();
 
-client.on('ready', () => {
+client.on("ready", () => {
     console.log(`Se connecter comme ${client.user.tag}!`);
-    client.channels.find("name", "chat").sendMessage("Bot ON prêt a être utilisier");
-
+    client.channels
+        .find("name", "chat")
+        .sendMessage("Bot ON prêt a être utilisier");
 });
 
-client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('I am here !');
+client.on("message", msg => {
+    if (msg.content === "ping") {
+        msg.reply("I am here !");
     }
 
-  if (msg.content === "*pp") {
-      msg.channel.send({
-          embed: {
-              color: 2550255,
-              author: {
-                  name: client.user.username,
-                  icon_url: client.user.avatarURL
-              },
-              title: "**Votre Photo de profil**",
-              url: msg.author.avatarURL,
-              image: {
-                  url: msg.author.avatarURL
-              },
+    if (msg.content === "*pp") {
+        msg.channel.send({
+            embed: {
+                color: 2550255,
+                author: {
+                    name: client.user.username,
+                    icon_url: client.user.avatarURL
+                },
+                title: "**Votre Photo de profil**",
+                url: msg.author.avatarURL,
+                image: {
+                    url: msg.author.avatarURL
+                },
 
-              timestamp: new Date(),
-              footer: {
-                  icon_url: client.user.avatarURL,
-                  text: "©" + client.user.username + "™"
-              }
-          }
-      });
-  }
+                timestamp: new Date(),
+                footer: {
+                    icon_url: client.user.avatarURL,
+                    text: "©" + client.user.username + "™"
+                }
+            }
+        });
+    }
 
-  if (msg.content === "*help") {
-      msg.channel.send({
-          embed: {
-              color: 2550255,
-              author: {
-                  name: client.user.username,
-                  icon_url: client.user.avatarURL
-              },
-              title: "Rejoindre le serveur officiel du BOT",
-              url:
-              "https://discord.gg/CBCN5S9",
-              description: "les commande du bot",
-              fields: [
-                  {
-                      name: "commande",
-                      value:
-                      "*pp,tct"
-                  },
-                  {
-                      name: "PS",
-                      value: "Rejoignez le serveur Officiel du BOT pour plus d'aide."
-                  },
-                  {
-                      name: "Merci",
-                      value: "Bonne journee FANTOME"
-                  }
-              ],
-              timestamp: new Date(),
-              footer: {
-                  icon_url: client.user.avatarURL,
-                  text: client.user.username
-              }
-          }
-      });
-  }
+    if (msg.content === "*help") {
+        msg.channel.send({
+            embed: {
+                color: 2550255,
+                author: {
+                    name: client.user.username,
+                    icon_url: client.user.avatarURL
+                },
+                title: "Rejoindre le serveur officiel du BOT",
+                url: "https://discord.gg/CBCN5S9",
+                description: "les commande du bot",
+                fields: [
+                    {
+                        name: "commande",
+                        value: "*pp,tct"
+                    },
+                    {
+                        name: "PS",
+                        value: "Rejoignez le serveur Officiel du BOT pour plus d'aide."
+                    },
+                    {
+                        name: "Merci",
+                        value: "Bonne journee FANTOME"
+                    }
+                ],
+                timestamp: new Date(),
+                footer: {
+                    icon_url: client.user.avatarURL,
+                    text: client.user.username
+                }
+            }
+        });
+    }
 
-  client.on("guildMemberAdd", member => {
-      client.channels.get("name", "chat").send("Nouveaux visiteurs son nom " + member.user.username);
-      var role = member.guild.roles.find("name", "Visiteurs");
-      member.addRole(role);
-  });
-// fin du code message
+    client.on("guildMemberAdd", member => {
+        client.channels
+            .get("name", "chat")
+            .send("Nouveaux visiteurs son nom " + member.user.username);
+        var role = member.guild.roles.find("name", "Visiteurs");
+        member.addRole(role);
+    });
+    // fin du code message
 });
 
-client.login('NDAxMzc1MTI0MDkzMTQxMDEz.DWI5rw.q_r8vYTwhKy0tY_cr6SVwv5pbTQ');
+client.login("NDAxMzc1MTI0MDkzMTQxMDEz.DWI5rw.q_r8vYTwhKy0tY_cr6SVwv5pbTQ");
