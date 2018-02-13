@@ -75,7 +75,12 @@ client.on("message", msg => {
     }
 
     client.on("guildMemberAdd", member => {
-        client.channels.get("412656091613102080").send("Nouveaux visiteurs son nom " + member.user.username);
+        client.channels.get("412656091613102080").send({
+            embed: {
+                title: "Un nouveaux Visiteurs sont nom " + member.user.username,
+                color: 0xECF0F1
+            }
+        });
         var role = member.guild.roles.find("name", "Visiteurs");
         member.addRole(role);
     });
