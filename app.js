@@ -75,7 +75,7 @@ client.on('message', msg => {
       client.channels.get("name", "chat").send("Nouveaux visiteurs son nom " + member.user.username);
       var role = member.guild.roles.find("name", "Visiteurs");
       member.addRole(role);
-  }
+  });
 // fin du code message
 });
 
