@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
     console.log(`Se connecter comme ${client.user.tag}!`);
-
+    client.channels.find("name", "chat").sendMessage("Bot ON prêt a être utilisier");
 
 });
 
