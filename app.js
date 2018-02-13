@@ -7,7 +7,7 @@ client.on("ready", () => {
     client.channels.get("412656091613102080").sendMessage({
         embed: {
             title: "Bot ON,prêt a être utiliser !",
-            color: 0x2874A6
+            color: 0x58D68D
         }
     });
 });
@@ -20,7 +20,7 @@ client.on("message", msg => {
     if (msg.content === "*pp") {
         msg.channel.send({
             embed: {
-                color: 2550255,
+                color: 0xE74C3C,
                 author: {
                     name: client.user.username,
                     icon_url: client.user.avatarURL
