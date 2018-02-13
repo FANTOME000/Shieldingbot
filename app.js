@@ -51,7 +51,7 @@ client.on('message', msg => {
                   {
                       name: "commande",
                       value:
-                      "*blacklist, *clean, *clear, *disconnect, *id, *joinserver, *listids, *np, *pause, *perms, *play, *pldump, *queue, *restart, *resume, *search, *setavatar, *setname, *setnick, *shuffle, *shutdown, *skip, *stream, *summon, *volume."
+                      "*pp,tct"
                   },
                   {
                       name: "PS",
@@ -71,8 +71,11 @@ client.on('message', msg => {
       });
   }
 
-
-
+  client.on("guildMemberAdd", member => {
+      client.channels.get("name", "chat").send("Nouveaux visiteurs son nom " + member.user.username);
+      var role = member.guild.roles.find("name", "Visiteurs");
+      member.addRole(role);
+  }
 // fin du code message
 });
 
