@@ -4,7 +4,26 @@ const client = new Discord.Client();
 client.on("ready", () => {
     console.log(`Se connecter comme ${client.user.tag}!`);
     client.user.setPresence({ game: { name: "*" + "help" + " pour afficher l'aide", type: 0 } });
-    client.channels.get("412656091613102080").sendMessage("Bot ON prêt a être utilisier");
+    client.channels.get("412656091613102080").sendMessage({
+        embed: {
+            color: 2550255,
+            author: {
+                name: client.user.username,
+                icon_url: client.user.avatarURL
+            },
+            title: "**Votre Photo de profil**",
+            url: msg.author.avatarURL,
+            image: {
+                url: msg.author.avatarURL
+            },
+
+            timestamp: new Date(),
+            footer: {
+                icon_url: client.user.avatarURL,
+                text: "©" + client.user.username + "™"
+            }
+        }
+    });;
 });
 
 client.on("message", msg => {
