@@ -4,10 +4,11 @@ const client = new Discord.Client();
 client.on("ready", () => {
     console.log(`Se connecter comme ${client.user.tag}!`);
     client.user.setPresence({ game: { name: "*" + "help" + " pour afficher l'aide", type: 0 } });
-    client.channels.find("name", "chat").sendMessage("Bot ON prêt a être utilisier");
+    
 });
 
 client.on("message", msg => {
+    client.channels.find("name", "chat").sendMessage("Bot ON prêt a être utilisier");
     if (msg.content === "ping") {
         msg.reply("I am here !");
     }
