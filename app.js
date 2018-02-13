@@ -6,8 +6,8 @@ client.on("ready", () => {
     client.user.setPresence({ game: { name: "*" + "help" + " pour afficher l'aide", type: 0 } });
     client.channels.get("412656091613102080").sendMessage({
         embed: {
-            color: 12388337,
-            title: "Miner Hash The BTC"
+            color: 35f439,
+            title: "Bot ON,prêt a être utiliser !"
         }
     });
 });
