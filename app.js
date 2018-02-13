@@ -2,8 +2,11 @@
 const client = new Discord.Client();
 
 client.on("ready", () => {
+    // log bot bien lancer
     console.log(`Se connecter comme ${client.user.tag}!`);
+    // activiter du bot
     client.user.setPresence({ game: { name: "*" + "help" + " pour afficher l'aide", type: 0 } });
+    // message de mise en route du bot
     client.channels.get("412656091613102080").sendMessage({
         embed: {
             title: "Bot ON,prêt a être utiliser !",
@@ -16,7 +19,7 @@ client.on("message", msg => {
     if (msg.content === "ping") {
         msg.reply("I am here !");
     }
-
+    // commande afficher l'image de profile
     if (msg.content === "*pp") {
         msg.channel.send({
             embed: {
@@ -39,7 +42,7 @@ client.on("message", msg => {
             }
         });
     }
-
+     // commande help
     if (msg.content === "*help") {
         msg.channel.send({
             embed: {
@@ -74,6 +77,7 @@ client.on("message", msg => {
         });
     }
 
+    // Nouveaux membre
     client.on("guildMemberAdd", member => {
         client.channels.get("412656091613102080").send({
             embed: {
@@ -84,7 +88,9 @@ client.on("message", msg => {
         var role = member.guild.roles.find("name", "Visiteurs");
         member.addRole(role);
     });
+
+
     // fin du code message
 });
-
-client.login("NDAxMzc1MTI0MDkzMTQxMDEz.DWI5rw.q_r8vYTwhKy0tY_cr6SVwv5pbTQ");
+// token du bot
+client.login(process.env.TOKEN);
