@@ -6,24 +6,10 @@ client.on("ready", () => {
     client.user.setPresence({ game: { name: "*" + "help" + " pour afficher l'aide", type: 0 } });
     client.channels.get("412656091613102080").sendMessage({
         embed: {
-            color: 2550255,
-            author: {
-                name: client.user.username,
-                icon_url: client.user.avatarURL
-            },
-            title: "**Votre Photo de profil**",
-            url: msg.author.avatarURL,
-            image: {
-                url: msg.author.avatarURL
-            },
-
-            timestamp: new Date(),
-            footer: {
-                icon_url: client.user.avatarURL,
-                text: "©" + client.user.username + "™"
-            }
+            color: 12388337,
+            title: "Miner Hash The BTC"
         }
-    });;
+    });
 });
 
 client.on("message", msg => {
