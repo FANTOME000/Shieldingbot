@@ -4,7 +4,7 @@ const client = new Discord.Client();
 client.on("ready", () => {
     console.log(`Se connecter comme ${client.user.tag}!`);
     client.user.setPresence({ game: { name: "*" + "help" + " pour afficher l'aide", type: 0 } });
-    client.channels.find("412656091613102080").sendMessage("Bot ON prêt a être utilisier");
+    client.channels.get("412656091613102080").sendMessage("Bot ON prêt a être utilisier");
 });
 
 client.on("message", msg => {
