@@ -88,6 +88,14 @@ client.on("message", msg => {
         var role = member.guild.roles.find("name", "Visiteurs");
         member.addRole(role);
     });
+    // Membre qui quite le Serveur
+    client.on("guildMemberRemove", member => {
+        client.channels.get("413027477598765056").send({
+            embed: {
+                title: member.user.username +", A quitter le Serveur",
+                color: 0x#FF0000
+            }
+        });
 
 
     // fin du code message
