@@ -81,7 +81,7 @@ client.on("message", msg => {
     client.on("guildMemberAdd", member => {
         client.channels.get("413027477598765056").send({
             embed: {
-                title: "Un nouveaux Visiteurs sont nom, " + "<@!" + userID + ">",
+                title: "Un nouveaux Visiteurs sont nom, " + "@" + member.user.username,
                 color: 0xECF0F1
             }
         });
