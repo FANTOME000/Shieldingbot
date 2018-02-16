@@ -81,26 +81,14 @@ client.on("message", msg => {
     client.on("guildMemberAdd", member => {
         client.channels.get("413027477598765056").send({
             embed: {
-                title: "Un nouveaux Visiteurs sont nom, " + "@" + member.user.username,
+                title: "Un nouveaux Visiteurs sont nom, @" + member.user.username,
                 color: 0xECF0F1
             }
         });
         var role = member.guild.roles.find("name", "Visiteurs");
         member.addRole(role);
     });
-    if (!message.guild) return;
 
-    if (message.content === '/join') {
-        if (message.member.voiceChannel) {
-            message.member.voiceChannel.join()
-                .then(connection => { 
-                    message.reply('I have successfully connected to the channel!');
-                })
-                .catch(console.log);
-        } else {
-            message.reply('You need to join a voice channel first!');
-        }
-    }
 
     // fin du code message
 });
