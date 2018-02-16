@@ -92,11 +92,11 @@ client.on("message", msg => {
     client.on("guildMemberRemove", member => {
         client.channels.get("413027477598765056").send({
             embed: {
-                title: member.user.username +", A quitter le Serveur",
+                title: member.user.username + ", A quitter le Serveur",
                 color: 0xFF0000
             }
         });
-
+    });
 
     // fin du code message
 });
