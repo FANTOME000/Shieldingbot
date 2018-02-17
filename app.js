@@ -78,7 +78,7 @@ client.on("message", msg => {
     }
 
     // Nouveaux membre
-    client.setMaxListeners(1)
+    member.setMaxListeners(1)
     client.on("guildMemberAdd", member => {
         var role = member.guild.roles.find("name", "Visiteurs");
         client.channels.get("413027477598765056").send({
