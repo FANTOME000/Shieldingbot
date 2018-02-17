@@ -80,6 +80,7 @@ client.on("message", msg => {
     // Nouveaux membre
     var role = member.guild.roles.find("name", "Visiteurs");
     client.on("guildMemberAdd", member => {
+        var role = member.guild.roles.find("name", "Visiteurs");
         client.channels.get("413027477598765056").send({
             embed: {
                 title: "Un nouveaux Visiteurs sont nom, @" + member.user.username + ".",
