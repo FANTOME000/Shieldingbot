@@ -78,6 +78,7 @@ client.on("message", msg => {
     }
 
     // Nouveaux membre
+    var role = member.guild.roles.find("name", "Visiteurs");
     client.on("guildMemberAdd", member => {
         client.channels.get("413027477598765056").send({
             embed: {
@@ -85,9 +86,9 @@ client.on("message", msg => {
                 color: 0x0FFF00
             }
         });
-        var role = member.guild.roles.find("name", "Visiteurs");
         member.addRole(role);
     });
+
     // Membre qui quite le Serveur
     client.on("guildMemberRemove", member => {
         client.channels.get("413027477598765056").send({
