@@ -78,7 +78,6 @@ client.on("message", msg => {
     }
 
     // Nouveaux membre
-    var role = member.guild.roles.find("name", "Visiteurs");
     client.on("guildMemberAdd", member => {
         var role = member.guild.roles.find("name", "Visiteurs");
         client.channels.get("413027477598765056").send({
@@ -87,7 +86,6 @@ client.on("message", msg => {
                 color: 0x0FFF00
             }
         });
-        var role = member.guild.roles.find("name", "Visiteurs");
         member.addRole(role);
     });
 
