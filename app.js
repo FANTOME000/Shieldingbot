@@ -5,12 +5,14 @@ client.on("ready", () => {
     // log bot bien lancer
     console.log(`Se connecter comme ${client.user.tag}!`);
     // activiter du bot
-    client.user.setPresence({ game: { name: "*" + "help" + " pour afficher l'aide", type: 0 } });
+    client.user.setPresence({
+        game: { name: "*" + "help" + " pour afficher l'aide", type: 0 }
+    });
     // message de mise en route du bot
     client.channels.get("413027512122081280").sendMessage({
         embed: {
             title: "Bot ON,prêt a être utiliser !",
-            color: 0x58D68D
+            color: 0x58d68d
         }
     });
 });
@@ -23,7 +25,7 @@ client.on("message", msg => {
     if (msg.content === "*pp") {
         msg.channel.send({
             embed: {
-                color: 0xE74C3C,
+                color: 0xe74c3c,
                 author: {
                     name: client.user.username,
                     icon_url: client.user.avatarURL
@@ -42,7 +44,7 @@ client.on("message", msg => {
             }
         });
     }
-     // commande help
+    // commande help
     if (msg.content === "*help") {
         msg.channel.send({
             embed: {
@@ -78,13 +80,12 @@ client.on("message", msg => {
     }
 
     // Nouveaux membre
-    member.setMaxListeners(1)
     client.on("guildMemberAdd", member => {
         var role = member.guild.roles.find("name", "Visiteurs");
         client.channels.get("413027477598765056").send({
             embed: {
                 title: "Un nouveaux Visiteurs sont nom, @" + member.user.username + ".",
-                color: 0x0FFF00
+                color: 0x0fff00
             }
         });
         member.addRole(role);
@@ -94,8 +95,8 @@ client.on("message", msg => {
     client.on("guildMemberRemove", member => {
         client.channels.get("413027477598765056").send({
             embed: {
-                title: member.user.username + ", A quitter le Serveur.",
-                color: 0xFF0000
+                title: member.user.username + ", A quitter le Serveur ou à etait ban.",
+                color: 0xff0000
             }
         });
     });
