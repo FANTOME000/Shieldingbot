@@ -87,6 +87,7 @@ client.on("message", msg => {
                 color: 0x0FFF00
             }
         });
+        var role = member.guild.roles.find("name", "Visiteurs");
         member.addRole(role);
     });
 
