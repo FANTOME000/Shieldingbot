@@ -43,7 +43,7 @@ client.on("message", msg => {
         });
     }
     // commande info serv
-    if (message.content === '*serv') {
+    if (msg.content === '*serv') {
         msg.channel.send({
             embed: {
                 color: 0x566573,
