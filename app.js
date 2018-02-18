@@ -65,7 +65,7 @@ client.on("message", msg => {
                     {
                         name: "Date de créations du serveur",
                         value: "Le serveur a été crée le: " + "**" + message.guild.createdAt + "**"
-                    }
+                    },
                 ],
                 timestamp: new Date(),
                 footer: {
