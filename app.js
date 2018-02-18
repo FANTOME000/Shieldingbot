@@ -76,7 +76,7 @@ client.on("message", msg => {
                     },
                     {
                         name: "Nombres de messages envoyez par " + client.user.username,
-                        value: "**" + client.message.size + "** messages envoyez par le bot"
+                        value: "**" + "test" + "** messages envoyez par le bot"
                     },
                 ],
                 timestamp: new Date(),
