@@ -1,6 +1,6 @@
 ﻿const Discord = require("discord.js");
 const client = new Discord.Client();
-
+var pre = "*";
 client.on("ready", () => {
     // log bot bien lancer
     console.log(`Se connecter comme ${client.user.tag}!`);
@@ -42,6 +42,12 @@ client.on("message", msg => {
             }
         });
     }
+
+    else if (msg.content.startsWith("*warn")) {
+        client.member.get(msg.content.replace("*warn ", "")).msg.channel.send({"lol"})
+
+
+    }
     // commande help
     if (msg.content === "*help") {
         msg.channel.send({
@@ -76,9 +82,11 @@ client.on("message", msg => {
             }
         });
     }
+
+    
     // fin du code message
 });
-
+// Membre qui rejoins le serveur
 client.on("guildMemberAdd", member => {
     var role = member.guild.roles.find("name", "Visiteurs");
     client.channels.get("413027477598765056").send({
