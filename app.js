@@ -67,8 +67,12 @@ client.on("message", msg => {
                         value: "Le serveur a été crée le: " + "**" + msg.guild.createdAt + "**"
                     },
                     {
-                        name: "Nombres de serveur ou es " + client.user.username,
+                        name: "Nombres de serveur où-es " + client.user.username,
                         value: "Je suis present dans "  + "**"  + client.guilds.size +  "**"  + " serveurs"
+                    },
+                    {
+                        name: "Noms des serveurs où se trouve " + client.user.username,
+                        value: "Les nom sont  " + "**" + client.guilds.name + "**"
                     },
                 ],
                 timestamp: new Date(),
