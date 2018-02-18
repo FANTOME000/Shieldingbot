@@ -78,10 +78,7 @@ client.on("message", msg => {
             }
         });
     }
-    if (command === "ping") {
-        const m = await message.channel.send("Ping?");
-        m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
-    }
+    
 
     if (message.content === '*ser') {
         msg.channel.send({
@@ -105,10 +102,15 @@ client.on("message", msg => {
                     {
                         name: "Date de créations du serveur",
                         value: "Le serveur a été crée le: " + "**" + message.guild.createdAt + "**"
-                    },
+                    }
                 ],
-            },
-        },
+                timestamp: new Date(),
+                footer: {
+                    icon_url: client.user.avatarURL,
+                    text: client.user.username
+                }
+            }
+        });
      };
 
     // fin du code message
