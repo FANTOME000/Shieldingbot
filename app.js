@@ -68,7 +68,7 @@ client.on("message", msg => {
                     },
                     {
                         name: "Nombres de serveur ou es " + client.user.username,
-                        value: "Je suis present dans "  + "**"  + bot.guilds.size +  "**"  + " serveurs"
+                        value: "Je suis present dans "  + "**"  + client.guilds.size +  "**"  + " serveurs"
                     },
                 ],
                 timestamp: new Date(),
