@@ -78,9 +78,8 @@ client.on("message", msg => {
             }
         });
     }
-    
-
-    if (message.content === '*ser') {
+    // commande info serv
+    if (message.content === '*serv') {
         msg.channel.send({
             embed: {
                 color: 0x566573,
