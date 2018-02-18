@@ -55,7 +55,7 @@ client.on("message", msg => {
                 color: 0x0FFF00,
                 fields: [
                     {
-                        name: "Chanels",
+                        name: "Nombres de salont dans le serveur",
                         value: "Il y a actuellement " + "**" + msg.guild.channels.size + "** " + "channels dans ce serveur"
                     },
                     {
@@ -73,6 +73,10 @@ client.on("message", msg => {
                     {
                         name: "Noms des serveurs où se trouve " + client.user.username,
                         value: "Les nom sont  " + "**" + client.guilds.name + "**"
+                    },
+                    {
+                        name: "Nombres de messages envoyez par " + client.user.username,
+                        value: "**" + client.message.size + "** messages envoyez par le bot"
                     },
                 ],
                 timestamp: new Date(),
