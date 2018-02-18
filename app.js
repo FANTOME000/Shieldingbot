@@ -56,15 +56,15 @@ client.on("message", msg => {
                 fields: [
                     {
                         name: "Chanels",
-                        value: "Il y a actuellement " + "** " + message.guild.channels.size + " ** " + " channels dans ce serveur"
+                        value: "Il y a actuellement " + "** " + msg.guild.channels.size + " ** " + " channels dans ce serveur"
                     },
                     {
                         name: "Nombres de Membres dans le Serveur",
-                        value: "Il y a exactement" + "** " + message.guild.members.size + " ** " + " membres dans ce serveur"
+                        value: "Il y a exactement" + "** " + msg.guild.members.size + " ** " + " membres dans ce serveur"
                     },
                     {
                         name: "Date de créations du serveur",
-                        value: "Le serveur a été crée le: " + "**" + message.guild.createdAt + "**"
+                        value: "Le serveur a été crée le: " + "**" + msg.guild.createdAt + "**"
                     },
                 ],
                 timestamp: new Date(),
