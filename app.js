@@ -5,7 +5,7 @@ client.on("ready", () => {
     // log bot bien lancer
     console.log(`Se connecter comme ${client.user.tag}!`);
     // activiter du bot
-    client.user.setGame("\"" + pre + "help\" pour afficher les commandes", 'https://www.twitch.tv/raid')
+    client.user.setGame("\"" + pre + "help\" pour afficher les commandes", 'https://www.twitch.tv/$')
     // message de mise en route du bot
     client.channels.get("413027512122081280").sendMessage({
         embed: {
@@ -17,8 +17,9 @@ client.on("ready", () => {
 
 client.on("message", msg => {
     if (msg.content === "ping") {
-        msg.reply("I am here !");
-    }
+            const m = await message.channel.send("Ping?");
+            m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+        }
     // commande afficher l'image de profile
     if (msg.content === "*pp") {
         msg.channel.send({
