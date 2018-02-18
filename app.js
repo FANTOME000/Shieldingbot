@@ -42,6 +42,39 @@ client.on("message", msg => {
             }
         });
     }
+    // commande info serv
+    if (message.content === '*serv') {
+        msg.channel.send({
+            embed: {
+                color: 0x566573,
+                author: {
+                    name: client.user.username,
+                    icon_url: client.user.avatarURL
+                },
+                title: "Informations du serveur",
+                color: 0x0FFF00,
+                fields: [
+                    {
+                        name: "Chanels",
+                        value: "Il y a actuellement " + "** " + message.guild.channels.size + " ** " + " channels dans ce serveur"
+                    },
+                    {
+                        name: "Nombres de Membres dans le Serveur",
+                        value: "Il y a exactement" + "** " + message.guild.members.size + " ** " + " membres dans ce serveur"
+                    },
+                    {
+                        name: "Date de créations du serveur",
+                        value: "Le serveur a été crée le: " + "**" + message.guild.createdAt + "**"
+                    }
+                ],
+                timestamp: new Date(),
+                footer: {
+                    icon_url: client.user.avatarURL,
+                    text: client.user.username
+                }
+            }
+        });
+    }
 
 
     // commande help
@@ -78,40 +111,7 @@ client.on("message", msg => {
             }
         });
     }
-    // commande info serv
-    if (message.content === '*serv') {
-        msg.channel.send({
-            embed: {
-                color: 0x566573,
-                author: {
-                    name: client.user.username,
-                    icon_url: client.user.avatarURL
-                },
-                title: "Informations du serveur",
-                color: 0x0FFF00,
-                fields: [
-                    {
-                        name: "Chanels",
-                        value: "Il y a actuellement " + "** " + message.guild.channels.size + " ** " + " channels dans ce serveur"
-                    },
-                    {
-                        name: "Nombres de Membres dans le Serveur",
-                        value: "Il y a exactement" + "** " + message.guild.members.size + " ** " + " membres dans ce serveur"
-                    },
-                    {
-                        name: "Date de créations du serveur",
-                        value: "Le serveur a été crée le: " + "**" + message.guild.createdAt + "**"
-                    }
-                ],
-                timestamp: new Date(),
-                footer: {
-                    icon_url: client.user.avatarURL,
-                    text: client.user.username
-                }
-            }
-        });
-     };
-
+    
     // fin du code message
 });
 // Membre qui rejoins le serveur
