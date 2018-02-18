@@ -44,7 +44,7 @@ client.on("message", msg => {
     }
 
     else if (msg.content.startsWith("*warn")) {
-        msg.content.replace("*warn ", "").msg.channel.send("lol mdr");
+        msg.content.reply("*warn ", "");
 
 
     }
