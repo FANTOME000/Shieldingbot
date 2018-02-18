@@ -5,7 +5,7 @@ client.on("ready", () => {
     // log bot bien lancer
     console.log(`Se connecter comme ${client.user.tag}!`);
     // activiter du bot
-    client.user.setPresence({ game: { name: "*" + "help" + " pour afficher l'aide", type: 0 } });
+    client.user.setGame("\"" + pre + "help\" pour afficher les commandes", 'https://www.twitch.tv/')
     // message de mise en route du bot
     client.channels.get("413027512122081280").sendMessage({
         embed: {
