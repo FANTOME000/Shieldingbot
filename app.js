@@ -72,7 +72,7 @@ client.on("message", msg => {
                     },
                     {
                         name: "Noms des serveurs où se trouve " + client.user.username,
-                        value: "Les nom sont  " + "**" + client.guilds.name + "**"
+                        value: "Les nom sont  " + "**" + client.guilds.username + "**"
                     },
                 ],
                 timestamp: new Date(),
