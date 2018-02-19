@@ -16,10 +16,7 @@ client.on("ready", () => {
 });
 
 client.on("message", msg => {
-    if (msg.content === "ping") {
-            const m = message.channel.send("Ping?");
-            m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
-        }
+    
     // commande afficher l'image de profile
     if (msg.content === "*pp") {
         msg.channel.send({
@@ -43,6 +40,29 @@ client.on("message", msg => {
             }
         });
     }
+
+    // commande inviter le bot
+    if (msg.content === "*add") {
+        msg.channel.send({
+            embed: {
+                color: 0xE74C3C,
+                author: {
+                    name: client.user.username,
+                    icon_url: client.user.avatarURL
+                },
+                title: "Clique ici pour ajouter " + user.username + " a ton serveur",
+                url: "https://discordapp.com/oauth2/authorize?client_id=401375124093141013&scope=bot&permissions=8",
+
+                timestamp: new Date(),
+                footer: {
+                    icon_url: client.user.avatarURL,
+                    text: "©" + client.user.username + "™"
+                }
+            }
+        });
+    }
+    
+
     // commande info serv
     if (msg.content === '*serv') {
         msg.channel.send({
