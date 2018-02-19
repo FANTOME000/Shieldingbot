@@ -76,24 +76,24 @@ client.on("message", msg => {
                 color: 0x0FFF00,
                 fields: [
                     {
-                        name: "Nombres de salont dans le serveur **" + msg.guild.name + "**",
-                        value: "Il y a actuellement " + "**" + msg.guild.channels.size + "** " + "channels dans **" + msg.guild.name + "**"
+                        name: "Nombres de salont dans le serveur **" + msg.guild.name + "**.",
+                        value: "Il y a actuellement " + "**" + msg.guild.channels.size + "** " + "channels dans **" + msg.guild.name + "**."
                     },
                     {
-                        name: "Nombres de Membres dans le Serveur **" + msg.guild.name + "**",
-                        value: "Il y a exactement " + "**" + msg.guild.members.size + "** " + "membres dans ce serveur"
+                        name: "Nombres de Membres dans le Serveur **" + msg.guild.name + "**.",
+                        value: "Il y a exactement " + "**" + msg.guild.members.size + "** " + "membres dans ce serveur."
                     },
                     {
-                        name: "Date de créations du serveur **" + msg.guild.name + "**",
-                        value: "Le serveur **" + msg.guild.name + "** " + "a été crée le: " + "**" + msg.guild.createdAt + "**"
+                        name: "Date de créations du serveur **" + msg.guild.name + "**.",
+                        value: "Le serveur **" + msg.guild.name + "** " + "a été crée le: " + "**" + msg.guild.createdAt + "**."
                     },
                     {
                         name: "Nombres de serveur où-es " + client.user.username,
-                        value: "Je suis present dans "  + "**"  + client.guilds.size +  "**"  + " serveurs"
+                        value: "Je suis present dans "  + "**"  + client.guilds.size +  "**"  + " serveurs."
                     },
                     {
-                        name: "L'administrateur du serveur **" + msg.guild.name + "**" + " es " + "**" + msg.guild.owner.user.username + "#" + msg.guild.owner.user.discriminator + "**",
-                        value: "Les nom sont  " + "**" + client.guilds.name + "**"
+                        name: "L'administrateur du serveur **" + msg.guild.name + "**" + " ès " + "**" + msg.guild.owner.user.username + "#" + msg.guild.owner.user.discriminator + "**.",
+                        value: "**" + msg.guild.owner.user.username + "#" + msg.guild.owner.user.discriminator + "** ès une personne trop puissante respecter la."
                     },
                     //{
                        // name: "Nombres de messages envoyez par " + client.user.username,
