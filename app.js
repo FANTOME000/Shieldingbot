@@ -95,10 +95,10 @@ client.on("message", msg => {
                         name: "L'administrateur du serveur **" + msg.guild.name + "**" + " es " + "**" + msg.guild.owner.user.username + "#" + msg.guild.owner.user.discriminator + "**",
                         value: "Les nom sont  " + "**" + client.guilds.name + "**"
                     },
-                    {
-                        name: "Nombres de messages envoyez par " + client.user.username,
-                        value: "**" + "%s message" + "** messages envoyez par le bot"
-                    },
+                    //{
+                       // name: "Nombres de messages envoyez par " + client.user.username,
+                        //value: "**" + "%s message" + "** messages envoyez par le bot"
+                    //},
                 ],
                 timestamp: new Date(),
                 footer: {
@@ -125,7 +125,7 @@ client.on("message", msg => {
                 fields: [
                     {
                         name: "commande",
-                        value: "*pp,tct"
+                        value: "*pp,*serv,*add"
                     },
                     {
                         name: "PS",
@@ -133,7 +133,7 @@ client.on("message", msg => {
                     },
                     {
                         name: "Merci",
-                        value: "Bonne journee FANTOME"
+                        value: "Bonne journeé"
                     }
                 ],
                 timestamp: new Date(),
