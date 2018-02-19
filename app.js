@@ -50,7 +50,7 @@ client.on("message", msg => {
                     name: client.user.username,
                     icon_url: client.user.avatarURL
                 },
-                title: "Clique ici pour ajouter " + user.username + " a ton serveur",
+                title: "Clique ici pour ajouter " + client.user.username + " a ton serveur",
                 url: "https://discordapp.com/oauth2/authorize?client_id=401375124093141013&scope=bot&permissions=8",
 
                 timestamp: new Date(),
