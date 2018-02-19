@@ -92,7 +92,7 @@ client.on("message", msg => {
                         value: "Je suis present dans "  + "**"  + client.guilds.size +  "**"  + " serveurs"
                     },
                     {
-                        name: "L'administrateur du serveur **" + msg.guild.name + "**" + " es " + "**" + msg.guild.owner.user.username + "**",
+                        name: "L'administrateur du serveur **" + msg.guild.name + "**" + " es " + "**" + msg.guild.owner.user.username + "#" + msg.guild.owner.user.discriminator + "**",
                         value: "Les nom sont  " + "**" + client.guilds.name + "**"
                     },
                     {
