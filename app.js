@@ -125,7 +125,7 @@ client.on("message", msg => {
                 fields: [
                     {
                         name: "commande",
-                        value: "*pp,*serv,*add"
+                        value: pre + "add," + pre + "serv," + pre + "help," + pre + "pp"
                     },
                     {
                         name: "PS",
