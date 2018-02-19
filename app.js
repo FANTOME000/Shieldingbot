@@ -133,7 +133,7 @@ client.on("message", msg => {
                     },
                     {
                         name: "Merci",
-                        value: "Bonne journeé"
+                        value: "Bonne journée"
                     }
                 ],
                 timestamp: new Date(),
