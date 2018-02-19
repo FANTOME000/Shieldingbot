@@ -52,20 +52,20 @@ client.on("message", msg => {
                     name: client.user.username,
                     icon_url: client.user.avatarURL
                 },
-                title: "Informations du serveur",
+                title: "Informations du serveur **" + msg.guild.name + "**",
                 color: 0x0FFF00,
                 fields: [
                     {
-                        name: "Nombres de salont dans le serveur",
-                        value: "Il y a actuellement " + "**" + msg.guild.channels.size + "** " + "channels dans ce serveur"
+                        name: "Nombres de salont dans le serveur **" + msg.guild.name + "**",
+                        value: "Il y a actuellement " + "**" + msg.guild.channels.size + "** " + "channels dans **" + msg.guild.name + "**"
                     },
                     {
-                        name: "Nombres de Membres dans le Serveur",
+                        name: "Nombres de Membres dans le Serveur **" + msg.guild.name + "**",
                         value: "Il y a exactement " + "**" + msg.guild.members.size + "** " + "membres dans ce serveur"
                     },
                     {
-                        name: "Date de créations du serveur",
-                        value: "Le serveur a été crée le: " + "**" + msg.guild.createdAt + "**"
+                        name: "Date de créations du serveur **" + msg.guild.name + "**",
+                        value: "Le serveur **" + msg.guild.name + "** " + "a été crée le: " + "**" + msg.guild.createdAt + "**"
                     },
                     {
                         name: "Nombres de serveur où-es " + client.user.username,
