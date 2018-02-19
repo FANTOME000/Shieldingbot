@@ -1,6 +1,6 @@
 ﻿const Discord = require("discord.js");
 const client = new Discord.Client();
-var pre = "*";
+var pre = "$";
 client.on("ready", () => {
     // log bot bien lancer
     console.log(`Se connecter comme ${client.user.tag}!`);
@@ -18,7 +18,7 @@ client.on("ready", () => {
 client.on("message", msg => {
     
     // commande afficher l'image de profile
-    if (msg.content === "*pp") {
+    if (msg.content === "$pp") {
         msg.channel.send({
             embed: {
                 color: 0xE74C3C,
@@ -42,7 +42,7 @@ client.on("message", msg => {
     }
 
     // commande inviter le bot
-    if (msg.content === "*add") {
+    if (msg.content === "$add") {
         msg.channel.send({
             embed: {
                 color: 0xFAA61A,
@@ -64,7 +64,7 @@ client.on("message", msg => {
     
 
     // commande info serv
-    if (msg.content === '*serv') {
+    if (msg.content === '$serv') {
         msg.channel.send({
             embed: {
                 color: 0x566573,
@@ -111,7 +111,7 @@ client.on("message", msg => {
 
 
     // commande help
-    if (msg.content === "*help") {
+    if (msg.content === "$help") {
         msg.channel.send({
             embed: {
                 color: 0x566573,
