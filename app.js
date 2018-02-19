@@ -45,7 +45,7 @@ client.on("message", msg => {
     if (msg.content === "*add") {
         msg.channel.send({
             embed: {
-                color: 0xFFB924,
+                color: 0xFAA61A,
                 author: {
                     name: client.user.username,
                     icon_url: client.user.avatarURL
