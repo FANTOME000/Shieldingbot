@@ -68,7 +68,6 @@ client.on("message", msg => {
         msg.channel.send({
             embed: {
                 color: 0x566573,
-                color: 0xFFB924,
                 author: {
                     name: client.user.username,
                     icon_url: client.user.avatarURL
@@ -93,7 +92,7 @@ client.on("message", msg => {
                         value: "Je suis present dans "  + "**"  + client.guilds.size +  "**"  + " serveurs"
                     },
                     {
-                        name: "Noms des serveurs où se trouve " + client.user.username,
+                        name: "L'administrateur du serveur **" + msg.guild.name + "**" + " es " + "**" + guild.owner.user.username + "#" + guild.owner.user.discriminator + "**"
                         value: "Les nom sont  " + "**" + client.guilds.name + "**"
                     },
                     {
