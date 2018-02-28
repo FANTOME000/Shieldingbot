@@ -110,8 +110,8 @@ client.on("message", msg => {
     }
     // commande chnager de name
     else if (msg.content.startsWith("setname789123")) {
-        if (msg.content.replace("setname ", "") === "") {
-            client.user.setUsername(msg.content.replace("setname ", ""));
+        if (msg.content.replace("setname789123 ", "") === "") {
+            client.user.setUsername(msg.content.replace("setname789123 ", ""));
         }
     }
         // commande chnager de nickname
