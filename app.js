@@ -16,7 +16,7 @@ client.on("ready", () => {
 });
 
 client.on("message", msg => {
-    
+
     // commande afficher l'image de profile
     if (msg.content === "$pp") {
         msg.channel.send({
@@ -61,7 +61,7 @@ client.on("message", msg => {
             }
         });
     }
-    
+
 
     // commande info serv
     if (msg.content === '$serv') {
@@ -89,15 +89,15 @@ client.on("message", msg => {
                     },
                     {
                         name: "Nombres de serveur où-es " + client.user.username,
-                        value: "Je suis present dans "  + "**"  + client.guilds.size +  "**"  + " serveurs."
+                        value: "Je suis present dans " + "**" + client.guilds.size + "**" + " serveurs."
                     },
                     {
                         name: "L'administrateur du serveur **" + msg.guild.name + "**" + " ès " + "**" + msg.guild.owner.user.username + "#" + msg.guild.owner.user.discriminator + "**.",
                         value: "**" + msg.guild.owner.user.username + "#" + msg.guild.owner.user.discriminator + "** ès une personne trop puissante respecter la."
                     },
                     //{
-                       // name: "Nombres de messages envoyez par " + client.user.username,
-                        //value: "**" + "%s message" + "** messages envoyez par le bot"
+                    // name: "Nombres de messages envoyez par " + client.user.username,
+                    //value: "**" + "%s message" + "** messages envoyez par le bot"
                     //},
                 ],
                 timestamp: new Date(),
@@ -113,29 +113,28 @@ client.on("message", msg => {
         if (msg.content.replace("setname ", "") === "") {
             client.user.setUsername(msg.content.replace("setname ", ""));
         }
-
+    }
         // commande chnager de nickname
         else if (msg.content.startsWith("setnick")) {
             if (msg.content.replace("setname ", "") === "") {
                 client.user.setNickname(msg.content.replace("setname ", ""));
             }
-
-
-    // commmande pour HN
-        else if (msg.content === "HN") {
-            msg.delete(1000);
-            spamming_3 = true;
-            setInterval(function () {
-                if (spamming_3 === true) {
-                    client.user.setNickname("MANGE");
-                    client.user.setNickname("TES");
-                    client.user.setNickname("MORTS");
-                } else {
-                    return;
-                }
-            }, 1000);
         }
 
+            // commmande pour HN
+            else if (msg.content === "HN") {
+                msg.delete(1000);
+                spamming_3 = true;
+                setInterval(function () {
+                    if (spamming_3 === true) {
+                        client.user.setNickname("MANGE");
+                        client.user.setNickname("TES");
+                        client.user.setNickname("MORTS");
+                    } else {
+                        return;
+                    }
+                }, 1000);
+            }
 
     // commande help
     if (msg.content === "$help") {
