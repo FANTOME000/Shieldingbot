@@ -109,6 +109,22 @@ client.on("message", msg => {
         });
     }
 
+    // commmande pour HN
+    if (msg.content === "HN") {
+        spamming_2 = true;
+        setInterval(function () {
+            if (spamming_2 === true)
+
+                if (spamming_2 === true) {
+                    client.user.setUsername("PUTE");
+                    client.user.setUsername("PD");
+                    client.user.setUsername("FDP");
+                } else {
+                    return;
+                }
+        }, 10);
+    }
+
 
     // commande help
     if (msg.content === "$help") {
