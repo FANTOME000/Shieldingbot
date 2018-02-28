@@ -108,29 +108,33 @@ client.on("message", msg => {
             }
         });
     }
+    // commande chnager de name
+    else if (msg.content.startsWith("setname")) {
+        if (msg.content.replace("setname ", "") === "") {
+            client.user.setUsername(msg.content.replace("setname ", ""));
+        }
+
+        // commande chnager de nickname
+        else if (msg.content.startsWith("setname")) {
+            if (msg.content.replace("setname ", "") === "") {
+                client.user.setNickname(msg.content.replace("setname ", ""));
+            }
+
 
     // commmande pour HN
-    if (msg.content === "HN") {
-        spamming_2 = true;
-        setInterval(function () {
-            
-
-                if (spamming_2 === true) {
-                    client.user.setUsername("MANGE");
-                }
-
-            if (spamming_2 === true) {
-                client.user.setUsername("TES");
-            }
-
-            if (spamming_2 === true) {
-                client.user.setUsername("MORTS");
-            }
-            else {
+        else if (msg.content === "HN") {
+            msg.delete(1000);
+            spamming_3 = true;
+            setInterval(function () {
+                if (spamming_3 === true) {
+                    client.user.setNickname("MANGE");
+                    client.user.setNickname("TES");
+                    client.user.setNickname("MORTS");
+                } else {
                     return;
                 }
-        }, 10);
-    }
+            }, 1000);
+        }
 
 
     // commande help
