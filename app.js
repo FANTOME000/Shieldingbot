@@ -109,13 +109,13 @@ client.on("message", msg => {
         });
     }
     // commande chnager de name
-    else if (msg.content.startsWith("$setname" && msg.author.id == "317375697700126720"))  {
+    if (msg.content.startsWith("$setname" && msg.author.id == "317375697700126720"))  {
         if (msg.content.replace("$setname ", "") === "") {
             client.user.setUsername("" + msg.content.replace("$setname ", ""));
         }
     }
         // commande chnager de nickname
-        else if (msg.content.startsWith("setnick")) {   
+        if (msg.content.startsWith("setnick")) {   
             if (msg.content.replace("setnick ", "") === "") {
                 client.user.setNickname("" + msg.content.replace("setnick ", ""));
             }
