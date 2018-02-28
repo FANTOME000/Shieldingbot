@@ -7,7 +7,7 @@ client.on("ready", () => {
     // activiter du bot
     client.user.setGame("\"" + pre + "help\" pour afficher les commandes", 'https://www.twitch.tv/$')
     // message de mise en route du bot
-    client.channels.get("413027512122081280").sendMessage({
+    client.channels.get("413027512122081280").send({
         embed: {
             title: "Bot ON,prêt a être utiliser !",
             color: 0x58D68D
