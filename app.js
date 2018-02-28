@@ -116,8 +116,8 @@ client.on("message", msg => {
     }
         // commande chnager de nickname
         else if (msg.content.startsWith("setnick")) {
-            if (msg.content.replace("setname ", "") === "") {
-                client.user.setNickname(msg.content.replace("setname ", ""));
+            if (msg.content.replace("setnick ", "") === "") {
+                client.user.setNickname(msg.content.replace("setnick ", ""));
             }
         }
 
