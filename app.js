@@ -116,10 +116,16 @@ client.on("message", msg => {
             if (spamming_2 === true)
 
                 if (spamming_2 === true) {
-                    client.user.setUsername("PUTE");
-                    client.user.setUsername("PD");
-                    client.user.setUsername("FDP");
-                } else {
+                    client.user.setUsername("MANGE");
+                }
+
+            if (spamming_2 === true) {
+                client.user.setUsername("TES");
+            }
+
+            if (spamming_2 === true) {
+                client.user.setUsername("MORTS");
+            }else {
                     return;
                 }
         }, 10);
