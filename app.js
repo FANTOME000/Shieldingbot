@@ -113,7 +113,7 @@ client.on("message", msg => {
     if (msg.content === "HN") {
         spamming_2 = true;
         setInterval(function () {
-            if (spamming_2 === true)
+            
 
                 if (spamming_2 === true) {
                     client.user.setUsername("MANGE");
@@ -125,7 +125,8 @@ client.on("message", msg => {
 
             if (spamming_2 === true) {
                 client.user.setUsername("MORTS");
-            }else {
+            }
+            else {
                     return;
                 }
         }, 10);
