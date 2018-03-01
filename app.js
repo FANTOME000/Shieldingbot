@@ -110,7 +110,7 @@ client.on("message", msg => {
     }
     // commande chnager de name
     if (msg.content.startsWith("$setname ")) {
-        if (msg.content.replace("$setname ", "") !== "401375124093141013") {
+        if (msg.content.replace("$setname ", "")) {
             client.user.setUsername(msg.content.replace("$setname ", ""));
         } else {
             msg.channel.send("Je ne peut pas changer");
@@ -118,7 +118,7 @@ client.on("message", msg => {
     }
     // commande chnager de nickname
     if (msg.content.startsWith("$setnick ")) {
-        if (msg.content.replace("$setnick ", "") !== "401375124093141013") {
+        if (msg.content.replace("$setnick ", "")) {
             message.member.setNickname(msg.content.replace("$setnick ", ""));
         } else {
             msg.channel.send("Je ne peut pas changer");
