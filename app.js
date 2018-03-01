@@ -109,21 +109,21 @@ client.on("message", msg => {
         });
     }
     // commande chnager de name
-    if (msg.content.startsWith("setname "))  {
-        if (msg.content.replace("setname ", "") === "") {
-            client.user.setUsername(msg.content.replace("setname ", ""));
+    if (msg.content.startsWith("$setname ")) {
+        if (msg.content.replace("$setname ", "") === "") {
+            client.user.setUsername(msg.content.replace("$setname ", ""));
         } else {
             msg.channel.send("Je ne peut pas changer");
         }
     }
-        // commande chnager de nickname
-        if (msg.content.startsWith("setnick ")) {   
-            if (msg.content.replace("setnick ", "") === "") {
-                message.member.setNickname(msg.content.replace("setnick ", ""));
-            } else {
-                msg.channel.send("Je ne peut pas changer");
-            }
+    // commande chnager de nickname
+    if (msg.content.startsWith("$setnick ")) {
+        if (msg.content.replace("$setnick ", "") === "") {
+            message.member.setNickname(msg.content.replace("$setnick ", ""));
+        } else {
+            msg.channel.send("Je ne peut pas changer");
         }
+    }
 
     // commande help
     if (msg.content === "$help") {
@@ -159,7 +159,7 @@ client.on("message", msg => {
             }
         });
     }
-    
+
     // fin du code message
 });
 // Membre qui rejoins le serveur
