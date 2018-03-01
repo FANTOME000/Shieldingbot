@@ -109,7 +109,7 @@ client.on("message", msg => {
         });
     }
     // commande chnager de name
-    if (msg.content.startsWith("setname " && msg.author.id == "317375697700126720"))  {
+    if (msg.content.startsWith("setname "))  {
         if (msg.content.replace("setname ", "") === "") {
             client.user.setUsername(msg.content.replace("setname ", ""));
         } else {
