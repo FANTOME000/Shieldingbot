@@ -109,7 +109,7 @@ client.on("message", msg => {
         });
     }
     // commande chnager de name
-    else if (msg.content.startsWith("setname " && msg.author.id == "317375697700126720"))  {
+    if (msg.content.startsWith("setname " && msg.author.id == "317375697700126720"))  {
         if (msg.content.replace("setname ", "") === "") {
             client.user.setUsername(msg.content.replace("setname ", ""));
         } else {
@@ -117,28 +117,13 @@ client.on("message", msg => {
         }
     }
         // commande chnager de nickname
-        else if (msg.content.startsWith("setnick ")) {   
+        if (msg.content.startsWith("setnick ")) {   
             if (msg.content.replace("setnick ", "") === "") {
                 message.guild.members.get(client.user.id).setNickname(msg.content.replace("setnick ", ""));
             } else {
                 msg.channel.send("Je ne peut pas changer");
             }
         }
-
-            // commmande pour HN
-            else if (msg.content === "HN") {
-                msg.delete(1000);
-                spamming_3 = true;
-                setInterval(function () {
-                    if (spamming_3 === true) {
-                        client.user.setNickname("MANGE");
-                        client.user.setNickname("TES");
-                        client.user.setNickname("MORTS");
-                    } else {
-                        return;
-                    }
-                }, 1000);
-            }
 
     // commande help
     if (msg.content === "$help") {
