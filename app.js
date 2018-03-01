@@ -108,7 +108,7 @@ client.on("message", msg => {
             }
         });
     }
-    // commande chnager de name
+    // commande changer de name
     if (msg.content.startsWith("$setname ")) {
         if (msg.content.replace("$setname ", "")) {
             client.user.setUsername(msg.content.replace("$setname ", ""));
@@ -116,10 +116,10 @@ client.on("message", msg => {
             msg.channel.send("Je ne peut pas changer");
         }
     }
-    // commande chnager de nickname
+    // commande changer de nickname
     if (msg.content.startsWith("$setnick ")) {
         if (msg.content.replace("$setnick ", "")) {
-            msg.member.setNickname(msg.content.replace("$setnick ", ""));
+            msg.guild.me.setNickname(msg.content.replace("$setnick ", ""));
         } else {
             msg.channel.send("Je ne peut pas changer");
         }
