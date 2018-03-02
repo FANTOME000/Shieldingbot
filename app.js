@@ -114,7 +114,7 @@ client.on("message", msg => {
             client.user.setUsername(msg.content.replace("$setname ", ""));
             msg.channel.send({
                 embed: {
-                    title: "Nom changer vers > " + client.user.nickname,
+                    title: "Nom changer vers > " + client.user.username,
                     color: 0x00FF0C
                 }
             });
@@ -134,7 +134,7 @@ client.on("message", msg => {
             msg.guild.me.setNickname(msg.content.replace("$setnick ", ""));
             msg.channel.send({
                 embed: {
-                    title: "Nom changer vers > " + client.user.nickname,
+                    title: "Nom changer vers > " + msg.guild.me.nickname,
                     color: 0x00FF0C
                 }
             });
