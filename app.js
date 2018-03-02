@@ -112,16 +112,39 @@ client.on("message", msg => {
     if (msg.content.startsWith("$setname ")) {
         if (msg.content.replace("$setname ", "")) {
             client.user.setUsername(msg.content.replace("$setname ", ""));
+            msg.channel.send({
+                embed: {
+                    title: "Nom changer vers >" + msg.author.nickname,
+                    color: 0x00FF0C
+                }
+            });
         } else {
-            msg.channel.send("Je ne peut pas changer");
+            msg.channel.send({
+                embed: {
+                    title: "Tu na pas les droits pour changer mon nom",
+                    color: 0xFF214A
+                }
+            });
+            
         }
     }
     // commande changer de nickname
     if (msg.content.startsWith("$setnick ")) {
         if (msg.content.replace("$setnick ", "")) {
             msg.guild.me.setNickname(msg.content.replace("$setnick ", ""));
+            msg.channel.send({
+                embed: {
+                    title: "Nom changer vers >" + msg.author.nickname,
+                    color: 0x00FF0C
+                }
+            });
         } else {
-            msg.channel.send("Je ne peut pas changer");
+            msg.channel.send({
+                embed: {
+                    title: "Je n'ai pas les droits pour changer mon pseudo",
+                    color: 0xFF214A
+                }
+            }););
         }
     }
 
