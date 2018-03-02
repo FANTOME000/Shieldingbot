@@ -8,7 +8,7 @@ client.on("ready", () => {
     console.log(`Channels: ${client.channels.size}`);
     console.log(`Users: ${client.users.size}`);
     // activiter du bot
-    client.user.setGame("\"" + pre + "help\" pour afficher les commandes", 'https://www.twitch.tv/$')
+    client.user.setGame(pre + "help pour afficher les cmd", 'https://www.twitch.tv/$')
     // message de mise en route du bot
     client.channels.get("413027512122081280").send({
         embed: {
@@ -110,6 +110,29 @@ client.on("message", msg => {
                 }
             }
         });
+    }
+    // commande info membre
+
+    if (command == "info") {
+        var mention = msg.mentions.users.first();
+        if (msg.mentions.users.size === 0) {
+            return msg.channel.send(":x: | Pleas mentionne un membre.")
+        }
+        var embed = new Discord.RichEmbed();
+        embed.addField("Username", `${mention.username}#${mention.discriminator}`, true)
+            .addField("ID", `${mention.id}`, true)
+            .setColor(0x00FF0C)
+            .setThumbnail(`${mention.avatarURL}`)
+            .setURL(`${mention.avatarURL}`)
+            .addField('Actuellement', `${mention.presence.status.toUpperCase()}`, true)
+            .addField('Game', `${mention.presence.game === null ? "No Game" : mention.presence.game.name}`, true)
+            .addField('Discord rejoins le', `${moment(mention.createdAt).format('MM.DD.YY')}`, true)
+            .addField('Ces un Bot', `${msg.author.bot.toString().toUpperCase()}`, true)
+        msg.channel.sendEmbed(
+            embed, {
+                disableEveryone: true
+            }
+        );
     }
     // commande changer de name
     if (msg.content.startsWith("$setname " && msg.author.id === "317375697700126720")) {
