@@ -121,7 +121,7 @@ client.on("message", msg => {
         var embed = new Discord.RichEmbed();
         embed.addField("Username", `${mention.username}#${mention.discriminator}`, true)
             .addField("ID", `${mention.id}`, true)
-            .setColor(0x00FF0C)
+            .setColor(randomcolor())
             .setThumbnail(`${mention.avatarURL}`)
             .setURL(`${mention.avatarURL}`)
             .addField('Actuellement', `${mention.presence.status.toUpperCase()}`, true)
