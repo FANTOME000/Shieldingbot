@@ -144,7 +144,7 @@ client.on("message", msg => {
                     title: "Je n'ai pas les droits pour changer mon pseudo",
                     color: 0xFF214A
                 }
-            }););
+            })
         }
     }
 
