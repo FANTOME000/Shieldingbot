@@ -20,7 +20,7 @@ client.on("ready", () => {
 
 client.on("message", msg => {
 
-    let prefix = $;
+    let prefix = "$";
     let channel = msg.channel;
     let guild = msg.guild;
     let text = msg.content;
