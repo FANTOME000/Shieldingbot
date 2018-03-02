@@ -147,18 +147,7 @@ client.on("message", msg => {
             })
         }
     }
-    if (msg.content.startsWith("clear")) {
-        let delamount = parseInt(args[1]) ? parseInt(args[1]) : 1;
-        msg.channel.fetchMessages({
-            limit: 100
-        })
-            .then(messages => {
-                msgar = messages.array();
-                msgar = msgar.filter(msg => msg.author.id === client.user.id);
-                msgar.length = delamount + 1;
-                msgar.map(msg => msg.delete().catch(console.error));
-            });
-    }
+    
     // commande help
     if (msg.content === "$help") {
         msg.channel.send({
