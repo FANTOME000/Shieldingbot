@@ -20,6 +20,12 @@ client.on("ready", () => {
 
 client.on("message", msg => {
 
+    let prefix = $;
+    let channel = msg.channel;
+    let guild = msg.guild;
+    let text = msg.content;
+    let args = text.split(" ");
+    let command = text.substring(prefix.length, args[0].length).toLowerCase();
     // commande afficher l'image de profile
     if (msg.content === "$pp") {
         msg.channel.send({
