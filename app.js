@@ -147,7 +147,7 @@ client.on("message", msg => {
             })
         }
     }
-    else if (command == "clear") {
+    if (msg.content.startWich("clear")) {
         let delamount = parseInt(args[1]) ? parseInt(args[1]) : 1;
         msg.channel.fetchMessages({
             limit: 100
