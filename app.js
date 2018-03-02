@@ -75,6 +75,50 @@ client.on("message", msg => {
         });
     }
 
+    if (msg.content === prefix + "stats") {
+        var date = new Date(bot.uptime);
+        var days = date.getUTCDate() - 1;
+        var hours = date.getUTCHours();
+        var minutes = date.getUTCMinutes();
+        var embed = new Discord.RichEmbed();
+        embed.setColor(randomcolor())
+            .setFooter(' ', ' ')
+            .setThumbnail(`${bot.user.avatarURL}`)
+            .setTimestamp()
+            .addField('Servers', `${bot.guilds.size}`, true)
+            .addField('Users', `${bot.users.size}`, false)
+            .addField('Discord Version', `${Discord.version}`, false)
+            .addField('Uptime', days + " days, " + hours + " hours and " + minutes + " minutes.")
+        msg.channel.sendEmbed(
+            embed, {
+                disableEveryone: true
+            }
+        );
+    }
+
+    if (msg.content.toLowerCase() === prefix + "serverinfo") {
+        var embed = new Discord.RichEmbed();
+        embed.addField("Server Name", `${msg.guild.name}`, true)
+            .addField("Server ID", `${msg.guild.id}`, true)
+            .setColor(randomcolor())
+            .setFooter(' ', ' ')
+            .setThumbnail(`${msg.guild.iconURL}`)
+            .setTimestamp()
+            .setURL(`${msg.author.avatarURL}`)
+            .addField('Guild Owner', `${msg.guild.owner.user.username}`, true)
+            .addField('Owner ID', `${msg.guild.owner.id}`, true)
+            .addField('Guild Created', `${moment(msg.guild.createdAt).format('MM.DD.YY')}`, true)
+            .addField('Member Count', `${msg.guild.memberCount}`, true)
+            .addField('Verification Level', `${msg.guild.verificationLevel}`, true)
+            .addField('Region', `${msg.guild.region.toUpperCase()}`, true)
+            .addField('Roles', `${msg.guild.roles.filter(r => r.name).size}`, true)
+            .addField('Channels', `${msg.guild.channels.filter(r => r.name).size}`, true)
+        msg.channel.sendEmbed(
+            embed, {
+                disableEveryone: true
+            }
+        );
+    }
 
     // commande info serv
     if (msg.content === '$serv') {
