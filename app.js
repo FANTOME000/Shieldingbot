@@ -1,5 +1,9 @@
 ﻿const Discord = require("discord.js");
 const client = new Discord.Client();
+var moment = require('moment') //npm i moment
+var randomcolor = require('randomcolor') //npm i randomcolor
+var winston = require('winston'); //npm i winston
+var util = require('util') //npm i util
 var pre = "$";
 client.on("ready", () => {
     // log bot bien lancer
