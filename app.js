@@ -45,7 +45,7 @@ client.on("message", msg => {
                     url: msg.author.avatarURL
                 },
 
-                timestamp: `${moment(msg.guild.createdAt).format('MM.DD.YY')}`,
+                timestamp: new Date(),
                 footer: {
                     icon_url: client.user.avatarURL,
                     text: "©" + client.user.username + "™"
