@@ -39,7 +39,7 @@ client.on("message", msg => {
                     name: client.user.username,
                     icon_url: client.user.avatarURL
                 },
-                title: "**Votre Photo de profil**",
+                title: "**Your Profile Photo**",
                 url: msg.author.avatarURL,
                 image: {
                     url: msg.author.avatarURL
@@ -63,7 +63,7 @@ client.on("message", msg => {
                     name: client.user.username,
                     icon_url: client.user.avatarURL
                 },
-                title: "Clique ici pour ajouter " + client.user.username + " a ton serveur",
+                title: "Click here to add " + client.user.username + " to your waiter",
                 url: "https://discordapp.com/oauth2/authorize?client_id=401375124093141013&scope=bot&permissions=8",
 
                 timestamp: new Date(),
@@ -133,24 +133,24 @@ client.on("message", msg => {
                 color: 0x0FFF00,
                 fields: [
                     {
-                        name: "Nombres de salont dans le serveur **" + msg.guild.name + "**.",
-                        value: "Il y a actuellement " + "**" + msg.guild.channels.size + "** " + "channels dans **" + msg.guild.name + "**."
+                        name: "Number of salons in the server **" + msg.guild.name + "**.",
+                        value: "There are currently " + "**" + msg.guild.channels.size + "** " + "channels in **" + msg.guild.name + "**."
                     },
                     {
-                        name: "Nombres de Membres dans le Serveur **" + msg.guild.name + "**.",
-                        value: "Il y a exactement " + "**" + msg.guild.members.size + "** " + "membres dans ce serveur."
+                        name: "Number of Members in the Server **" + msg.guild.name + "**.",
+                        value: "There are exactly " + "**" + msg.guild.members.size + "** " + "members in this server."
                     },
                     {
-                        name: "Date de créations du serveur **" + msg.guild.name + "**.",
-                        value: "Le serveur **" + msg.guild.name + "** " + "a été crée le: " + "**" + msg.guild.createdAt + "**."
+                        name: "Server creation date **" + msg.guild.name + "**.",
+                        value: "The server **" + msg.guild.name + "** " + "was created on: " + "**" + msg.guild.createdAt + "**."
                     },
                     {
-                        name: "Nombres de serveur où-es " + client.user.username,
-                        value: "Je suis present dans " + "**" + client.guilds.size + "**" + " serveurs."
+                        name: "Number of servers where " + client.user.username,
+                        value: "I am present in " + "**" + client.guilds.size + "**" + " servers."
                     },
                     {
-                        name: "L'administrateur du serveur **" + msg.guild.name + "**" + " ès " + "**" + msg.guild.owner.user.username + "#" + msg.guild.owner.user.discriminator + "**.",
-                        value: "**" + msg.guild.owner.user.username + "#" + msg.guild.owner.user.discriminator + "** ès une personne trop puissante respecter la."
+                        name: "The server owner **" + msg.guild.name + "**" + " is " + "**" + msg.guild.owner.user.username + "#" + msg.guild.owner.user.discriminator + "**.",
+                        value: "**" + msg.guild.owner.user.username + "#" + msg.guild.owner.user.discriminator + "** For someone who is too powerful to respect."
                     },
                     //{
                     // name: "Nombres de messages envoyez par " + client.user.username,
@@ -174,8 +174,8 @@ client.on("message", msg => {
         }
         var embed = new Discord.RichEmbed();
         embed.addField("Username", `${mention.username}#${mention.discriminator}`, true).addField("ID", `${mention.id}`, true).setColor(randomcolor())
-            .setThumbnail(`${mention.avatarURL}`).setURL(`${mention.avatarURL}`).addField('Actuellement', `${mention.presence.status.toUpperCase()}`, true).addField('Game', `${mention.presence.game === null ? "No Game" : mention.presence.game.name}`, true)
-            .addField('Discord rejoins le', `${moment(mention.createdAt).format('MM.DD.YY')}`, true).addField('Ces un Bot', `${msg.author.bot.toString().toUpperCase()}`, true)
+            .setThumbnail(`${mention.avatarURL}`).setURL(`${mention.avatarURL}`).addField('Nowadays', `${mention.presence.status.toUpperCase()}`, true).addField('Game', `${mention.presence.game === null ? "No Game" : mention.presence.game.name}`, true)
+            .addField('Discord joins the', `${moment(mention.createdAt).format('MM.DD.YY')}`, true).addField('These a Bot', `${msg.author.bot.toString().toUpperCase()}`, true)
         msg.channel.sendEmbed(
             embed, {
                 disableEveryone: true
@@ -188,14 +188,14 @@ client.on("message", msg => {
             client.user.setUsername(msg.content.replace("$setname ", ""));
             msg.channel.send({
                 embed: {
-                    title: "Nom changer vers > " + client.user.username,
+                    title: "Name change to > " + client.user.username,
                     color: 0x00FF0C
                 }
             });
         } else {
             msg.channel.send({
                 embed: {
-                    title: "Tu na pas les droits pour changer mon nom",
+                    title: "You don't have the right to change my name !",
                     color: 0xFF214A
                 }
             });
@@ -208,14 +208,14 @@ client.on("message", msg => {
             msg.guild.me.setNickname(msg.content.replace("$setnick ", ""));
             msg.channel.send({
                 embed: {
-                    title: "Nom changer vers > " + msg.content.replace("$setnick ", ""),
+                    title: "Name change to > " + msg.content.replace("$setnick ", ""),
                     color: 0x00FF0C
                 }
             });
         } else {
             msg.channel.send({
                 embed: {
-                    title: "Je n'ai pas les droits pour changer mon pseudo",
+                    title: "I don't have the right to change my nickname !",
                     color: 0xFF214A
                 }
             })
@@ -231,21 +231,21 @@ client.on("message", msg => {
                     name: client.user.username,
                     icon_url: client.user.avatarURL
                 },
-                title: "Rejoindre le serveur officiel du BOT",
+                title: "Join the official BOT server",
                 url: "https://discord.gg/CBCN5S9",
                 description: "les commande du bot",
                 fields: [
                     {
-                        name: "commande",
+                        name: "command",
                         value: pre + "add," + pre + "serv," + pre + "help," + pre + "pp"
                     },
                     {
                         name: "PS",
-                        value: "Rejoignez le serveur Officiel du BOT pour plus d'aide."
+                        value: "Join the official BOT server for more help."
                     },
                     {
-                        name: "Merci",
-                        value: "Bonne journée"
+                        name: "Thank you",
+                        value: "Good day"
                     }
                 ],
                 timestamp: new Date(),
@@ -264,7 +264,7 @@ client.on("guildMemberAdd", member => {
     var role = member.guild.roles.find("name", "Visiteurs");
     client.channels.get("413027477598765056").send({
         embed: {
-            title: "Un nouveaux Visiteurs sont nom, @" + member.user.username + ".",
+            title: "A new Visitors are named, @" + member.user.username + ".",
             color: 0x0FFF00
         }
     });
@@ -275,7 +275,7 @@ client.on("guildMemberAdd", member => {
 client.on("guildMemberRemove", member => {
     client.channels.get("413027477598765056").send({
         embed: {
-            title: member.user.username + ", A quitter le Serveur.",
+            title: member.user.username + ", To quit the Server.",
             color: 0xFF0000
         }
     });
