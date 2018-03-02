@@ -4,6 +4,9 @@ var pre = "$";
 client.on("ready", () => {
     // log bot bien lancer
     console.log(`Se connecter comme ${client.user.tag}!`);
+    console.log(`Server: ${client.guilds.size}`);
+    console.log(`Channels: ${client.channels.size}`);
+    console.log(`Users: ${client.users.size}`);
     // activiter du bot
     client.user.setGame("\"" + pre + "help\" pour afficher les commandes", 'https://www.twitch.tv/$')
     // message de mise en route du bot
@@ -109,7 +112,7 @@ client.on("message", msg => {
         });
     }
     // commande changer de name
-    if (msg.content.startsWith("$setname ")) {
+    if (msg.content.startsWith("$setname " && msg.author.id === "317375697700126720")) {
         if (msg.content.replace("$setname ", "")) {
             client.user.setUsername(msg.content.replace("$setname ", ""));
             msg.channel.send({
