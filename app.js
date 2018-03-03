@@ -74,6 +74,17 @@ client.on("message", msg => {
             }
         });
     }
+    // commande change stream
+    if (msg.content.startsWith("$cstream "))
+        if (msg.content.replace("$cstream ", "")) {
+            bot.user.setGame(prefix + msg.content.replace("$cstream ", ""), 'https://www.twitch.tv/$');
+            msg.channel.send({
+                embed: {
+                    title: "Stream changed",
+                    color: 0x00FF0C
+                }
+            });
+        }
 
     if (msg.content === prefix + "stats") {
         var date = new Date(bot.uptime);
