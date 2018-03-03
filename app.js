@@ -96,7 +96,9 @@ client.on("message", msg => {
             .then(messages => {
                 messages.map(msg => msg.delete().catch(console.error));
             }).catch(console.error);
-    } else if (command == "clear") {
+    }
+
+    if (command == "clear") {
         let delamount = parseInt(args[1]) ? parseInt(args[1]) : 1;
         msg.channel.fetchMessages({
             limit: amount
