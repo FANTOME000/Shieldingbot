@@ -5,6 +5,7 @@ var randomcolor = require('randomcolor') //npm i randomcolor
 var winston = require('winston'); //npm i winston
 var util = require('util') //npm i util
 var pre = "$";
+var prefix = "$";
 client.on("ready", () => {
     // log bot bien lancer
     console.log(`Se connecter comme ${client.user.tag}!`);
@@ -86,6 +87,27 @@ client.on("message", msg => {
             //});
         //}
 
+    // commande clear
+    if (command == "purge") {
+        var amount = parseInt(args[1]);
+        msg.channel.fetchMessages({
+            limit: amount
+        })
+            .then(messages => {
+                messages.map(msg => msg.delete().catch(console.error));
+            }).catch(console.error);
+    } else if (command == "clear") {
+        let delamount = parseInt(args[1]) ? parseInt(args[1]) : 1;
+        msg.channel.fetchMessages({
+            limit: amount
+        })
+            .then(messages => {
+                msgar = messages.array();
+                msgar = msgar.filter(msg => msg.author.id === bot.user.id);
+                msgar.length = delamount + 1;
+                msgar.map(msg => msg.delete().catch(console.error));
+            });
+    }
     if (msg.content === prefix + "stats") {
         var date = new Date(bot.uptime);
         var days = date.getUTCDate() - 1;
