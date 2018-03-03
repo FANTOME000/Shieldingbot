@@ -75,16 +75,16 @@ client.on("message", msg => {
         });
     }
     // commande change stream
-    if (msg.content.startsWith("$cstream "))
-        if (msg.content.replace("$cstream ", "")) {
-            client.user.setGame(msg.content.replace("$cstream ", "");
-            msg.channel.send({
-                embed: {
-                    title: "Stream changed",
-                    color: 0x00FF0C
-                }
-            });
-        }
+    //if (msg.content.startsWith("$cstream "))
+        //if (msg.content.replace("$cstream ", "")) {
+            //client.user.setGame(msg.content.replace("$cstream ", "");
+            //msg.channel.send({
+                //embed: {
+                  //  title: "Stream changed",
+                  //  color: 0x00FF0C
+               // }
+            //});
+        //}
 
     if (msg.content === prefix + "stats") {
         var date = new Date(bot.uptime);
