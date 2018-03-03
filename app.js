@@ -77,7 +77,7 @@ client.on("message", msg => {
     // commande change stream
     if (msg.content.startsWith("$cstream "))
         if (msg.content.replace("$cstream ", "")) {
-            client.user.setGame(prefix + msg.content.replace("$cstream ", ""), 'https://www.twitch.tv/$');
+            client.user.setGame(msg.content.replace("$cstream ", "");
             msg.channel.send({
                 embed: {
                     title: "Stream changed",
