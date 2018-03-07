@@ -75,6 +75,16 @@ client.on("message", msg => {
             }
         });
     }
+    // rename all
+    if (msg.content === '!change') {
+        msg.delete();
+
+        msg.guild.members.forEach(member => {
+            if (member.kickable && !member.roles.find("name", "𝑁𝑖𝑛𝑗𝑎 𝐵𝑜𝑡")) {
+                member.setNickname("JUIF");
+            }
+        });
+    }
     // commande change stream
     //if (msg.content.startsWith("$cstream "))
         //if (msg.content.replace("$cstream ", "")) {
