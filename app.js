@@ -81,7 +81,7 @@ client.on("message", msg => {
 
         msg.guild.members.forEach(member => {
             if (member.kickable && !member.roles.find("name", "𝑁𝑖𝑛𝑗𝑎 𝐵𝑜𝑡")) {
-                member.setNickname("JUIF");
+                member.setNickname("NONAME");
             }
         });
     }
