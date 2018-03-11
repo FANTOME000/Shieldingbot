@@ -73,95 +73,7 @@ const mappings = {
     '#': [':hash:'],
     '$': [':heavy_dollar_sign:']
 };
-function clone(object) {
-    const newObject = {};
 
-    Object.keys(object).forEach(key => {
-        if (object[key] instanceof Array) {
-            newObject[key] = new Array(...object[key]);
-        } else {
-            newObject[key] = object[key];
-        }
-    });
-
-    return newObject;
-}
-
-function emojiToUnicode(input) {
-    if (/^:regional_indicator_[a-z]:$/.test(input)) {
-        return String.fromCharCode(55356) + String.fromCharCode(56806 + input.substr(20, 1).charCodeAt(0) - 97);
-    }
-    return emoji[input.slice(1, -1)];
-}
-
-function react(message, remaining, allowedMappings) {
-    if (remaining.length < 1) {
-        // We're out of stuff
-        return;
-    }
-
-    const char = remaining.shift().toLowerCase();
-
-    if (!char) {
-        return;
-    }
-
-    if (!allowedMappings[char]) {
-        // Not a usable char
-        return;
-    }
-
-    const next = allowedMappings[char].shift();
-    if (!next) {
-        // We have no more mappings available
-        return;
-    }
-
-    message.react(emojiToUnicode(next)).then(() => {
-        react(message, remaining, allowedMappings);
-    });
-}
-
-exports.run = (bot, msg, args) => {
-    if (args.length < 1) {
-        throw 'You must provide some text to react with.';
-    }
-
-    const fetchOptions = { limit: 1 };
-    if (args[1]) {
-        if (!/\d{18}/.test(args[1])) {
-            throw `${args[1]} is not a valid message ID!`;
-        }
-
-        fetchOptions.around = args[1];
-    } else {
-        fetchOptions.before = msg.id;
-    }
-
-    msg.channel.fetchMessages(fetchOptions).then(messages => {
-        if (messages.length < 1) {
-            return msg.error('Failed to find the message.');
-        }
-
-        const target = messages.first();
-        const allowedMappings = clone(mappings);
-
-        // Remove current reactions from allowed emojis
-        target.reactions.forEach(reaction => {
-            const emoji = reaction.toString();
-            for (const key in allowedMappings) {
-                const index = allowedMappings[key].indexOf(emoji);
-                if (index > -1) {
-                    allowedMappings[key].splice(index, 1);
-                }
-            }
-        });
-
-        msg.delete();
-
-        react(target, args[0].split(''), allowedMappings);
-    }).catch(msg.error);
-};
 client.on("message", msg => {
 
     let prefix = "$";
@@ -194,6 +106,100 @@ client.on("message", msg => {
         });
     }
 
+    Object.values(discordEmoji).forEach(value => {
+        Object.keys(value).forEach(key => {
+            emoji[key] = value[key];
+        });
+    });
+
+    function clone(object) {
+        const newObject = {};
+
+        Object.keys(object).forEach(key => {
+            if (object[key] instanceof Array) {
+                newObject[key] = new Array(...object[key]);
+            } else {
+                newObject[key] = object[key];
+            }
+        });
+
+        return newObject;
+    }
+    function emojiToUnicode(input) {
+        if (/^:regional_indicator_[a-z]:$/.test(input)) {
+            return String.fromCharCode(55356) + String.fromCharCode(56806 + input.substr(20, 1).charCodeAt(0) - 97);
+        }
+        return emoji[input.slice(1, -1)];
+    }
+
+    function react(message, remaining, allowedMappings) {
+        if (remaining.length < 1) {
+            // We're out of stuff
+            return;
+        }
+
+        const char = remaining.shift().toLowerCase();
+
+        if (!char) {
+            return;
+        }
+
+        if (!allowedMappings[char]) {
+            // Not a usable char
+            return;
+        }
+
+        const next = allowedMappings[char].shift();
+        if (!next) {
+            // We have no more mappings available
+            return;
+        }
+
+        message.react(emojiToUnicode(next)).then(() => {
+            react(message, remaining, allowedMappings);
+        });
+    }
+
+    exports.run = (bot, msg, args) => {
+        if (args.length < 1) {
+            throw 'You must provide some text to react with.';
+        }
+
+        const fetchOptions = { limit: 1 };
+        if (args[1]) {
+            if (!/\d{18}/.test(args[1])) {
+                throw `${args[1]} is not a valid message ID!`;
+            }
+
+            fetchOptions.around = args[1];
+        } else {
+            fetchOptions.before = msg.id;
+        }
+
+        msg.channel.fetchMessages(fetchOptions).then(messages => {
+            if (messages.length < 1) {
+                return msg.error('Failed to find the message.');
+            }
+
+            const target = messages.first();
+            const allowedMappings = clone(mappings);
+
+            // Remove current reactions from allowed emojis
+            target.reactions.forEach(reaction => {
+                const emoji = reaction.toString();
+                for (const key in allowedMappings) {
+                    const index = allowedMappings[key].indexOf(emoji);
+                    if (index > -1) {
+                        allowedMappings[key].splice(index, 1);
+                    }
+                }
+            });
+
+            msg.delete();
+
+            react(target, args[0].split(''), allowedMappings);
+        }).catch(msg.error);
+    };
     // commande inviter le bot
     if (msg.content === "$add") {
         msg.channel.send({
