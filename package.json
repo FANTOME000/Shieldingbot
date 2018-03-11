@@ -28,9 +28,6 @@
   "homepage": "https://github.com/FANTOME000/-ShieldingBot#readme",
   "dependencies": {
     "discord.js": "^11.2.1",
-    "moment": "^2.20.1",
-    "randomcolor": "^0.5.3",
-    "util": "^0.10.3",
-    "winston": "^2.4.0"
+    "discord-emoji": "1.1.1"
   }
 }
